@@ -15,7 +15,7 @@ export const EventDetails = ()=>{
               <h2 className="card-title">{eventData.eventTitle}</h2>
               <p>{eventData.description}</p>
               <div className="card-actions ">
-                <button className="btn btn-primary">Join</button>
+                <button className="btn btn-primary">Join Event</button>
               </div>
             </div>
           </div>
