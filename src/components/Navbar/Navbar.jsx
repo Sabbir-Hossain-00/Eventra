@@ -14,14 +14,14 @@ export const Navbar = () => {
 
   const handleLogout = () => {
     logOut().then((result)=>{
-        swal("Login Successful!", "Welcome to HobMeet", "success");
+        swal("Logout Successfully done!", "Welcome to HobMeet", "success");
     }).catch(error => console.log(error));
   };
 
   const links = (
     <>
       <li className={`${isDark ? "text-white" : ""}`}><NavLink to="/" className={({ isActive }) => isActive ? "text-[#e4c1f9] font-medium" : "font-medium"}>Home</NavLink></li>
-      <li className={`${isDark ? "text-white" : ""}`}><NavLink to="/" className={({ isActive }) => isActive ? "text-[#e4c1f9] font-medium" : "font-medium"}>Upcoming Events</NavLink></li>
+      <li className={`${isDark ? "text-white" : ""}`}><NavLink to="/upcoming-events" className={({ isActive }) => isActive ? "text-[#e4c1f9] font-medium" : "font-medium"}>Upcoming Events</NavLink></li>
       
       
     </>

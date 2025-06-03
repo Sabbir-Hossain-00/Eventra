@@ -1,16 +1,24 @@
 import { use } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import axios from "axios";
+import { useNavigate } from "react-router";
 
 export const CreateEvent = ()=>{
-    const {user, isDark} = use(AuthContext)
+    const {user, isDark} = use(AuthContext);
+    const navigate = useNavigate();
 
     const handleCreateEvent = (e)=>{
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const groupData = Object.fromEntries(formData.entries());
-        
         console.log(groupData)
+        axios.post("http://localhost:3000/events", groupData).then((result)=>{
+            if(result.data.insertedId){
+                swal("Event Created Successfully !", "", "success");
+                navigate("/")
+            }
+        }).catch(error => console.log(error))
     }
     return(
         <>

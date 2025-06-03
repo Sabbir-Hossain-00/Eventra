@@ -5,6 +5,7 @@ import { Login } from "../pages/Login/Login";
 import { Register } from "../pages/Register/Register";
 import { PrivateRoute } from "../Route/PrivateRoute";
 import { CreateEvent } from "../pages/Create-Event/CreateEvent";
+import { UpcomingEvents } from "../pages/Upcoming-Events/UpcomingEvents";
 
 export const router = createBrowserRouter([
     {
@@ -26,6 +27,11 @@ export const router = createBrowserRouter([
             {
                 path:"/create-event",
                 element: <PrivateRoute><CreateEvent/></PrivateRoute>
+            },
+            {
+                path:"/upcoming-events",
+                loader:()=>fetch("http://localhost:3000/upcomingEvents"),
+                element:<UpcomingEvents/>
             }
         ]
     }
