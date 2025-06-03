@@ -16,7 +16,7 @@ export const UpcomingEventCard = ({eventData})=>{
               <p>{eventDate}</p>
               <p>{description}</p>
               <div className="card-actions ">
-                <Link to={`/event-details/:${_id}`} className="btn btn-primary"> View Event</Link>
+                <Link to={`/event-details/${_id}`} className="btn btn-primary"> View Event</Link>
               </div>
             </div>
           </div>

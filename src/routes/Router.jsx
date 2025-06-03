@@ -6,6 +6,7 @@ import { Register } from "../pages/Register/Register";
 import { PrivateRoute } from "../Route/PrivateRoute";
 import { CreateEvent } from "../pages/Create-Event/CreateEvent";
 import { UpcomingEvents } from "../pages/Upcoming-Events/UpcomingEvents";
+import { EventDetails } from "../pages/Event-Details/EventDetails";
 
 export const router = createBrowserRouter([
     {
@@ -32,6 +33,11 @@ export const router = createBrowserRouter([
                 path:"/upcoming-events",
                 loader:()=>fetch("http://localhost:3000/upcomingEvents"),
                 element:<UpcomingEvents/>
+            },
+            {
+                path:"/event-details/:id",
+                loader:({params})=> fetch(`http://localhost:3000/eventDetails/${params.id}`),
+                element:<PrivateRoute><EventDetails/></PrivateRoute>
             }
         ]
     }
