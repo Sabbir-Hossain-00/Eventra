@@ -1,5 +1,6 @@
 import { use, useEffect, useState } from "react"
 import { AuthContext } from "../../context/AuthContext"
+import axios from "axios";
 
 export const ManageEvents = ()=>{
     const {user , isDark} = use(AuthContext)
@@ -13,6 +14,19 @@ export const ManageEvents = ()=>{
     useEffect(()=>{
         fetchData()
     },[])
+
+
+    const handleDeleteEvent = (id)=>{
+      axios.delete(`http://localhost:3000/events/${id}`).then((result)=>{
+        if(result.data.deletedCount){
+          const remainingEvents = eventsData.filter((item)=> item._id !== id);
+          setEventsData(remainingEvents)
+        }
+      }).catch(error => console.log(error))
+    }
+
+
+
     return(
         <section className="mt-10 min-h-screen py-20 container mx-auto px-3 md:px-6 lg:px-8 xl:px-14">
           <h1 className="text-center text-2xl md:text-4xl mb-2 font-medium">The Events You Created
@@ -57,7 +71,7 @@ export const ManageEvents = ()=>{
                                 <button onClick={()=>navigate(`/updategroup/${signleData._id}`)} className="btn border-none  bg-amber-300 hover:bg-amber-400  ">Update</button>
                               </td>
                               <td className="border border-gray-200">
-                                <button onClick={()=>handleDeleteGroup(signleData._id)} className="btn border-none bg-rose-500 hover:bg-rose-600 text-white">Delete</button>
+                                <button onClick={()=>handleDeleteEvent(signleData._id)} className="btn border-none bg-rose-500 hover:bg-rose-600 text-white">Delete</button>
                               </td>
                             </tr>
                   })

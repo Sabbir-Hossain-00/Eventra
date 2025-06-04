@@ -16,7 +16,7 @@ export const CreateEvent = ()=>{
         axios.post("http://localhost:3000/events", groupData).then((result)=>{
             if(result.data.insertedId){
                 swal("Event Created Successfully !", "", "success");
-                navigate("/")
+                navigate("/upcoming-events");
             }
         }).catch(error => console.log(error))
     }
