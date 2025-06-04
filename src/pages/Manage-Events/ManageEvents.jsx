@@ -1,10 +1,12 @@
 import { use, useEffect, useState } from "react"
 import { AuthContext } from "../../context/AuthContext"
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 export const ManageEvents = ()=>{
-    const {user , isDark} = use(AuthContext)
+    const {user , isDark} = use(AuthContext);
     const [eventsData , setEventsData] = useState();
+    const navigate = useNavigate();
     const fetchData = async()=>{
         const response = await fetch(`http://localhost:3000/manageEvents?email=${user.email}`)
         const data = await response.json();
@@ -38,9 +40,9 @@ export const ManageEvents = ()=>{
               <thead>
                 <tr className={`border border-gray-200 text-center ${isDark ? "text-white" :"text-gray-700"}`}>
                   <th className="border border-gray-200">Name</th>
-                  <th className="border border-gray-200">Group Name</th>
-                  <th className="border border-gray-200">Max Member</th>
-                  <th className="border border-gray-200">Category</th>
+                  <th className="border border-gray-200">Event Title</th>
+                  <th className="border border-gray-200">Event Type</th>
+                  <th className="border border-gray-200">Date</th>
                   <th className="border border-gray-200">Update</th>
                   <th className="border border-gray-200">Delete</th>
                 </tr>
@@ -60,13 +62,13 @@ export const ManageEvents = ()=>{
                                   </div>
                                   <div className="flex flex-col min-w-fit pr-2 items-start">
                                     <div className="font-bold">{signleData.userName}</div>
-                                    <div className="text-sm opacity-50">{signleData.location}</div>
+                                    <div className="text-sm opacity-50">{signleData.eventLocation}</div>
                                   </div>
                                 </div>
                               </td>
-                              <td className="border border-gray-200">{signleData.groupName}</td>
-                              <td className="border border-gray-200">{signleData.members}</td>
-                              <td className="border border-gray-200">{signleData.hobbyCategory}</td>
+                              <td className="border border-gray-200">{signleData.eventTitle}</td>
+                              <td className="border border-gray-200">{signleData.eventType}</td>
+                              <td className="border border-gray-200">{signleData.eventDate}</td>
                               <td className="border border-gray-200">
                                 <button onClick={()=>navigate(`/updategroup/${signleData._id}`)} className="btn border-none  bg-amber-300 hover:bg-amber-400  ">Update</button>
                               </td>

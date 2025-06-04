@@ -8,6 +8,7 @@ import { CreateEvent } from "../pages/Create-Event/CreateEvent";
 import { UpcomingEvents } from "../pages/Upcoming-Events/UpcomingEvents";
 import { EventDetails } from "../pages/Event-Details/EventDetails";
 import { ManageEvents } from "../pages/Manage-Events/ManageEvents";
+import { UpdateGroup } from "../pages/Update-Group/UpdateGroup";
 
 export const router = createBrowserRouter([
     {
@@ -43,6 +44,11 @@ export const router = createBrowserRouter([
             {
                 path:"/manage-events",
                 element:<PrivateRoute><ManageEvents/></PrivateRoute>
+            },
+            {
+                path:"/updategroup/:id",
+                loader:({params})=> fetch(`http://localhost:3000/eventDetails/${params.id}`),
+                element:<PrivateRoute><UpdateGroup/></PrivateRoute>
             }
         ]
     }
