@@ -1,10 +1,14 @@
-import { use } from "react";
+import { use, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import './customDatePickerWidth.css';
 
 export const CreateEvent = ()=>{
     const {user, isDark} = use(AuthContext);
+    const [eventDate , setEventDate] = useState(null)
     const navigate = useNavigate();
 
     const handleCreateEvent = (e)=>{
@@ -13,6 +17,10 @@ export const CreateEvent = ()=>{
         const formData = new FormData(form);
         const groupData = Object.fromEntries(formData.entries());
         console.log(groupData)
+        groupData.eventDate = eventDate?.toISOString().split("T")[0];
+
+        console.log(groupData)
+
         axios.post("http://localhost:3000/events", groupData).then((result)=>{
             if(result.data.insertedId){
                 swal("Event Created Successfully !", "", "success");
@@ -93,13 +101,27 @@ export const CreateEvent = ()=>{
                 <label className="block mb-2 font-medium">
                  Event Date:<span className="text-red-500">*</span>
                 </label>
-                <input
+
+
+                <div className="customDatePickerWidth">
+                  <DatePicker
+                  selected={eventDate}
+                  onChange={(date)=> setEventDate(date)}
+                  minDate={new Date()}
+                  placeholderText="Select Event Date"
+                  className=" w-full p-2 mb-4 border rounded bg-transparent"
+                  required
+                />
+                </div>
+
+
+                {/* <input
                   type="date"
                   name="eventDate"
                   min={new Date().toISOString().split("T")[0]}
                   className="w-full p-2 mb-4 border  rounded bg-transparent"
                   required
-                />
+                /> */}
         
                 <label className="block mb-2 font-medium">
                  Thumbnail Image URL:<span className="text-red-500">*</span>
