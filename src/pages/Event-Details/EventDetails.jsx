@@ -1,8 +1,17 @@
-import { useLoaderData } from "react-router"
+import axios from "axios";
+import { useLoaderData, useNavigate } from "react-router"
 
 export const EventDetails = ()=>{
     const eventData = useLoaderData();
-    console.log(eventData)
+    const navigate = useNavigate()
+    const handleJoinEvent = ()=>{
+      axios.post("http://localhost:3000/joinedEvents", eventData).then((response)=>{
+        if(response.data.insertedId){
+          swal(" Joined a event successfully!", "Welcome to HobMeet", "success");
+          navigate("/joined-events")
+        }
+      }).catch(error => console.log(error))
+    }
     return(
         <section className="pt-30 pb-10">
           <div className="mx-auto w-1/2 card card-side bg-base-100 shadow-sm">
@@ -15,7 +24,7 @@ export const EventDetails = ()=>{
               <h2 className="card-title">{eventData.eventTitle}</h2>
               <p>{eventData.description}</p>
               <div className="card-actions ">
-                <button className="btn btn-primary">Join Event</button>
+                <button onClick={handleJoinEvent} className="btn btn-primary">Join Event</button>
               </div>
             </div>
           </div>
