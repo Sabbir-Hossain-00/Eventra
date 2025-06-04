@@ -1,16 +1,38 @@
 import axios from "axios";
+import { use } from "react";
 import { useLoaderData, useNavigate } from "react-router"
+import { AuthContext } from "../../context/AuthContext";
 
 export const EventDetails = ()=>{
+    const {user} = use(AuthContext)
     const eventData = useLoaderData();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const {_id,ThumbPhoto,description,eventDate,eventLocation,eventTitle,eventType,userEmail} = eventData ;
+    
+
+
     const handleJoinEvent = ()=>{
-      axios.post("http://localhost:3000/joinedEvents", eventData).then((response)=>{
+
+      const joinedEventData = {
+        ThumbPhoto,
+        description,
+        eventDate,
+        eventLocation,
+        eventTitle,
+        eventType,
+        userEmail:user.email,
+        userName:user.displayName,
+        userPhoto:user.photoURL,
+      }
+
+
+      axios.post("http://localhost:3000/joinedEvents",joinedEventData).then((response)=>{
         if(response.data.insertedId){
           swal(" Joined a event successfully!", "Welcome to HobMeet", "success");
           navigate("/joined-events")
         }
       }).catch(error => console.log(error))
+      
     }
     return(
         <section className="pt-30 pb-10">

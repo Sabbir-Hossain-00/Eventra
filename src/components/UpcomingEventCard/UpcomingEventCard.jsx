@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 
 export const UpcomingEventCard = ({eventData})=>{
-    console.log(eventData)
     const {_id,ThumbPhoto,description,eventDate,eventLocation,eventTitle,eventType,userEmail} = eventData ;
     return(
         <section >
@@ -9,7 +8,7 @@ export const UpcomingEventCard = ({eventData})=>{
             <figure>
               <img
                 src={ThumbPhoto}
-                alt="Shoes" />
+                alt="bg-img" />
             </figure>
             <div className="card-body">
               <h2 className="card-title">{eventTitle}</h2>

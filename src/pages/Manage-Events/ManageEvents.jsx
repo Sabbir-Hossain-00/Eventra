@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 
 export const ManageEvents = ()=>{
     const {user , isDark} = use(AuthContext);
-    const [eventsData , setEventsData] = useState();
+    const [eventsData , setEventsData] = useState(null);
     const navigate = useNavigate();
     const fetchData = async()=>{
         const response = await fetch(`http://localhost:3000/manageEvents?email=${user.email}`)
