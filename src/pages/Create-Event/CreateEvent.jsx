@@ -17,7 +17,7 @@ export const CreateEvent = ()=>{
         const formData = new FormData(form);
         const groupData = Object.fromEntries(formData.entries());
         console.log(groupData)
-        groupData.eventDate = eventDate?.toISOString().split("T")[0];
+        groupData.eventDate = eventDate?.toLocaleDateString('sv-SE');
 
         console.log(groupData)
 

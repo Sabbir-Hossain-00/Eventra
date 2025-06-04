@@ -8,9 +8,14 @@ export const JoinedEvent = ()=>{
     
     
     const fetchData = async()=>{
-            const response = await fetch(`http://localhost:3000/joinedEvents?email=${user.email}`)
-            const data = await response.json();
-            setJoinedEventData(data)
+        const accessToken = user.accessToken;
+        const response = await fetch(`http://localhost:3000/joinedEvents?email=${user.email}`,{
+            headers:{
+                authorization: `Bearer ${accessToken}`
+            }
+        })
+        const data = await response.json();
+        setJoinedEventData(data)
     }
     
         
