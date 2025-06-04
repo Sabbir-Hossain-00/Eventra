@@ -7,8 +7,13 @@ export const ManageEvents = ()=>{
     const {user , isDark} = use(AuthContext);
     const [eventsData , setEventsData] = useState(null);
     const navigate = useNavigate();
+    const accessToken = user.accessToken;
     const fetchData = async()=>{
-        const response = await fetch(`http://localhost:3000/manageEvents?email=${user.email}`)
+        const response = await fetch(`http://localhost:3000/manageEvents?email=${user.email}`,{
+          headers:{
+                authorization: `Bearer ${accessToken}`
+            }
+        })
         const data = await response.json();
         setEventsData(data)
     }
