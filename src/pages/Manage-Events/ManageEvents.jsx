@@ -2,20 +2,19 @@ import { use, useEffect, useState } from "react"
 import { AuthContext } from "../../context/AuthContext"
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { useAxiousSecure } from "../../hooks/useAxiousSecure";
 
 export const ManageEvents = ()=>{
     const {user , isDark} = use(AuthContext);
     const [eventsData , setEventsData] = useState(null);
     const navigate = useNavigate();
-    const accessToken = user.accessToken;
+    const axiousSecure = useAxiousSecure();
+
+    
     const fetchData = async()=>{
-        const response = await fetch(`http://localhost:3000/manageEvents?email=${user.email}`,{
-          headers:{
-                authorization: `Bearer ${accessToken}`
-            }
-        })
-        const data = await response.json();
-        setEventsData(data)
+        axiousSecure.get(`/manageEvents?email=${user.email}`).then((res)=>{
+          setEventsData(res.data)
+        }).catch(error => console.log(error))
     }
 
     useEffect(()=>{

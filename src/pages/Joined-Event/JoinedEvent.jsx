@@ -1,27 +1,26 @@
 import { use, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { JoinedEventCard } from "../../components/Joined-Event-Card/JoinedEventCard";
+import { useAxiousSecure } from "../../hooks/useAxiousSecure";
 
 export const JoinedEvent = ()=>{
     const {user} = use(AuthContext);
     const [joinedEventsData , setJoinedEventData] = useState(null)
+    const axiousSecure = useAxiousSecure();
     
     
     const fetchData = async()=>{
-        const accessToken = user.accessToken;
-        const response = await fetch(`http://localhost:3000/joinedEvents?email=${user.email}`,{
-            headers:{
-                authorization: `Bearer ${accessToken}`
-            }
-        })
-        const data = await response.json();
-        setJoinedEventData(data)
-    }
-    
+        axiousSecure.get(`/joinedEvents?email=${user.email}`).then((res)=>{
+        console.log(res.data)
+        setJoinedEventData(res.data)
+        }).catch(error => console.log(error))
         
+    }
+      
     useEffect(()=>{
         fetchData()
     },[])
+
 
     return(
         <>
