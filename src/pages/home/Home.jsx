@@ -1,7 +1,16 @@
+import { Banner } from "../../components/Banner/Banner"
+import { Feature } from "../../components/Feature/Feature"
+import { Gallery } from "../../components/Gallery/Gallery"
+import { NewsLetter } from "../../components/News-Letter/NewsLetter"
+
+
 export const Home = ()=>{
     return(
-        <>
-         <h1 className="pt-25 text-3xl font-medium">This is Home</h1>
-        </>
+        <section className="mt-20">
+            <Banner/>
+            <Feature/>
+            <Gallery/>
+            <NewsLetter/>
+        </section>
     )
 }
