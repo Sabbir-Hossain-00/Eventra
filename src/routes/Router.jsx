@@ -47,7 +47,6 @@ export const router = createBrowserRouter([
             },
             {
                 path:"/updategroup/:id",
-                loader:({params})=> fetch(`https://eventra-server.vercel.app/eventDetails/${params.id}`),
                 element:<PrivateRoute><UpdateGroup/></PrivateRoute>
             },
             {

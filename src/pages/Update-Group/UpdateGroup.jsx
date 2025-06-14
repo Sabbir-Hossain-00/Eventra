@@ -14,7 +14,6 @@ export const UpdateGroup = ()=>{
     
     const fetchingData = ()=>{
         axiousSecure.get(`https://eventra-server.vercel.app/eventDetails/${id}`).then((res)=>{
-          
           setEventData(res.data)
           setLoading(false)
         }).catch(error => console.log(error))

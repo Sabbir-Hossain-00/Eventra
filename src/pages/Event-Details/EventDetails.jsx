@@ -1,5 +1,5 @@
 import { use, useEffect, useState } from "react";
-import { useLoaderData, useNavigate, useParams } from "react-router"
+import {  useNavigate, useParams } from "react-router"
 import { AuthContext } from "../../context/AuthContext";
 import { useAxiousSecure } from "../../hooks/useAxiousSecure";
 import { Loader } from "../Loader/Loader";
