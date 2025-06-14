@@ -1,12 +1,13 @@
-import axios from "axios";
 import { use } from "react";
 import { useLoaderData, useNavigate } from "react-router"
 import { AuthContext } from "../../context/AuthContext";
+import { useAxiousSecure } from "../../hooks/useAxiousSecure";
 
 export const EventDetails = ()=>{
     const {user} = use(AuthContext)
     const eventData = useLoaderData();
     const navigate = useNavigate();
+    const axiousSecure = useAxiousSecure();
     const {_id,ThumbPhoto,description,eventDate,eventLocation,eventTitle,eventType,userEmail} = eventData ;
     
 
@@ -26,7 +27,7 @@ export const EventDetails = ()=>{
       }
 
 
-      axios.post("http://localhost:3000/joinedEvents",joinedEventData).then((response)=>{
+      axiousSecure.post("https://eventra-server.vercel.app/joinedEvents",joinedEventData).then((response)=>{
         if(response.data.insertedId){
           swal(" Joined a event successfully!", "Welcome to HobMeet", "success");
           navigate("/joined-events")

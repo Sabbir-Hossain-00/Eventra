@@ -1,12 +1,13 @@
 import { use } from "react"
 import { AuthContext } from "../../context/AuthContext"
 import { useLoaderData, useNavigate } from "react-router";
-import axios from "axios";
+import { useAxiousSecure } from "../../hooks/useAxiousSecure";
 
 export const UpdateGroup = ()=>{
     const {isDark , user} = use(AuthContext);
     const navigate = useNavigate();
     const eventData = useLoaderData();
+    const axiousSecure = useAxiousSecure();
     const {_id,ThumbPhoto,description,eventDate,eventLocation,eventTitle,eventType,userEmail} = eventData ;
 
     const handleUpdateEvent = (e)=>{
@@ -14,7 +15,7 @@ export const UpdateGroup = ()=>{
         const form = e.target ;
         const formData = new FormData(form);
         const updatedData = Object.fromEntries(formData.entries());
-        axios.put(`http://localhost:3000/events/${_id}` , updatedData).then((result)=>{
+        axiousSecure.put(`https://eventra-server.vercel.app/events/${_id}` , updatedData).then((result)=>{
             if(result.data.modifiedCount){
                 swal("Event Updated Successfully !", "", "success");
                 navigate("/manage-events")

@@ -1,6 +1,5 @@
 import { use, useEffect, useState } from "react"
 import { AuthContext } from "../../context/AuthContext"
-import axios from "axios";
 import { useNavigate } from "react-router";
 import { useAxiousSecure } from "../../hooks/useAxiousSecure";
 
@@ -12,7 +11,7 @@ export const ManageEvents = ()=>{
 
     
     const fetchData = async()=>{
-        axiousSecure.get(`/manageEvents?email=${user.email}`).then((res)=>{
+        axiousSecure.get(`https://eventra-server.vercel.app/manageEvents?email=${user.email}`).then((res)=>{
           setEventsData(res.data)
         }).catch(error => console.log(error))
     }
@@ -23,7 +22,7 @@ export const ManageEvents = ()=>{
 
 
     const handleDeleteEvent = (id)=>{
-      axios.delete(`http://localhost:3000/events/${id}`).then((result)=>{
+      axiousSecure.delete(`https://eventra-server.vercel.app/events/${id}`).then((result)=>{
         if(result.data.deletedCount){
           const remainingEvents = eventsData.filter((item)=> item._id !== id);
           setEventsData(remainingEvents)

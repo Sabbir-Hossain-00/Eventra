@@ -62,9 +62,9 @@ export const Register = ()=>{
     }
 
     useEffect(() => {
-        document.title = "Register - HobMeet";
+        document.title = "Register - Eventra";
         return () => {
-          document.title = "HobMeet"; // reset on unmount
+          document.title = "Eventra"; // reset on unmount
         };
       }, []);
     

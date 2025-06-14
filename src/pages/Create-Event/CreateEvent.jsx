@@ -5,11 +5,13 @@ import { useNavigate } from "react-router";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './customDatePickerWidth.css';
+import { useAxiousSecure } from "../../hooks/useAxiousSecure";
 
 export const CreateEvent = ()=>{
     const {user, isDark} = use(AuthContext);
     const [eventDate , setEventDate] = useState(null)
     const navigate = useNavigate();
+    const axiousSecure = useAxiousSecure();
 
     const handleCreateEvent = (e)=>{
         e.preventDefault();
@@ -21,7 +23,7 @@ export const CreateEvent = ()=>{
 
         console.log(groupData)
 
-        axios.post("http://localhost:3000/events", groupData).then((result)=>{
+        axiousSecure.post("https://eventra-server.vercel.app/events", groupData).then((result)=>{
             if(result.data.insertedId){
                 swal("Event Created Successfully !", "", "success");
                 navigate("/upcoming-events");

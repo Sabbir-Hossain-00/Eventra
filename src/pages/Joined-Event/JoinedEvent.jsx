@@ -10,10 +10,12 @@ export const JoinedEvent = ()=>{
     
     
     const fetchData = async()=>{
-        axiousSecure.get(`/joinedEvents?email=${user.email}`).then((res)=>{
-        console.log(res.data)
-        setJoinedEventData(res.data)
-        }).catch(error => console.log(error))
+        if(user){
+            axiousSecure.get(`https://eventra-server.vercel.app/joinedEvents?email=${user.email}`).then((res)=>{
+            console.log(res.data)
+            setJoinedEventData(res.data)
+            }).catch(error => console.log(error))
+        }
         
     }
       

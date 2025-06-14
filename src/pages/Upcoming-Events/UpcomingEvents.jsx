@@ -18,7 +18,7 @@ export const UpcomingEvents = ()=>{
 
     useEffect(()=>{
         if(searchValue){
-            axios.get(`http://localhost:3000/upcomingEventsByTitle?title=${searchValue}`).then((res)=>{
+            axios.get(`https://eventra-server.vercel.app/upcomingEventsByTitle?title=${searchValue}`).then((res)=>{
             console.log(res.data)
             setEventData(res.data)
         }).then(error => console.log(error))
@@ -28,7 +28,7 @@ export const UpcomingEvents = ()=>{
 
     useEffect(()=>{
         if(category){
-            axios.get(`http://localhost:3000/upcomingEventsByCategory?category=${category}`).then((res)=>{
+            axios.get(`https://eventra-server.vercel.app/upcomingEventsByCategory?category=${category}`).then((res)=>{
             console.log(res.data)
             setEventData(res.data)
         }).then(error => console.log(error))

@@ -34,12 +34,12 @@ export const router = createBrowserRouter([
             },
             {
                 path:"/upcoming-events",
-                loader:()=>fetch("http://localhost:3000/upcomingEvents"),
+                loader:()=>fetch("https://eventra-server.vercel.app/upcomingEvents"),
                 element:<UpcomingEvents/>
             },
             {
                 path:"/event-details/:id",
-                loader:({params})=> fetch(`http://localhost:3000/eventDetails/${params.id}`),
+                loader:({params})=> fetch(`https://eventra-server.vercel.app/eventDetails/${params.id}`),
                 element:<PrivateRoute><EventDetails/></PrivateRoute>
             },
             {
@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:"/updategroup/:id",
-                loader:({params})=> fetch(`http://localhost:3000/eventDetails/${params.id}`),
+                loader:({params})=> fetch(`https://eventra-server.vercel.app/eventDetails/${params.id}`),
                 element:<PrivateRoute><UpdateGroup/></PrivateRoute>
             },
             {

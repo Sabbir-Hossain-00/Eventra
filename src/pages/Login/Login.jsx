@@ -39,9 +39,9 @@ export const Login = ()=>{
     }
 
     useEffect(() => {
-        document.title = "Login - HobMeet";
+        document.title = "Login - Eventra";
         return () => {
-          document.title = "HobMeet"; // reset on unmount
+          document.title = "Eventra"; // reset on unmount
         };
       }, []);
 

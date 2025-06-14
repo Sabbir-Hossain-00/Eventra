@@ -1,23 +1,22 @@
 import axios from "axios"
-import { use } from "react";
+import { use, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 const axiousInstance = axios.create({
-    baseURL:'http://localhost:3000'
+    baseURL:'https://eventra-server.vercel.app'
 })
 
 export const useAxiousSecure = ()=>{
 
     const {user , logOut} = use(AuthContext);
-    console.log(user.accessToken)
-
-    axiousInstance.interceptors.request.use(config =>{
+    useEffect(()=>{
+    const requestInterceptor = axiousInstance.interceptors.request.use(config =>{
         config.headers.authorization = `Bearer ${user?.accessToken}`
         return config ;
-    });
+     });
 
 
-    axiousInstance.interceptors.response.use(response =>{
+    const responseInterceptor = axiousInstance.interceptors.response.use(response =>{
         return response ;
     }, error =>{
         if(error?.status === 401 || error?.status === 403){
@@ -27,6 +26,11 @@ export const useAxiousSecure = ()=>{
         }
         return Promise.reject(error)
     })
+    return()=>{
+      axiousInstance.interceptors.request.eject(requestInterceptor);
+      axiousInstance.interceptors.response.eject(responseInterceptor);
+    }
+    },[user?.accessToken, logOut])
     
     return axiousInstance ;
 }
@@ -52,7 +56,7 @@ export const useAxiousSecure = ()=>{
 // import { AuthContext } from "../context/AuthContext";
 
 // const axiosSecure = axios.create({
-//   baseURL: "https://eventra-server.vercel.app",
+//   baseURL: "https://eventra-server.vercel.apppp",
 // });
 
 // export const useAxiousSecure = () => {
