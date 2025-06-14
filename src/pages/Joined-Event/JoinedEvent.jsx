@@ -2,20 +2,20 @@ import { use, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { JoinedEventCard } from "../../components/Joined-Event-Card/JoinedEventCard";
 import { useAxiousSecure } from "../../hooks/useAxiousSecure";
+import { Loader } from "../Loader/Loader";
 
 export const JoinedEvent = ()=>{
     const {user} = use(AuthContext);
     const [joinedEventsData , setJoinedEventData] = useState(null)
     const axiousSecure = useAxiousSecure();
-    
+    const [loading , setLoading] = useState(true)
     
     const fetchData = async()=>{
-        if(user){
-            axiousSecure.get(`https://eventra-server.vercel.app/joinedEvents?email=${user.email}`).then((res)=>{
-            console.log(res.data)
-            setJoinedEventData(res.data)
-            }).catch(error => console.log(error))
-        }
+
+        axiousSecure.get(`https://eventra-server.vercel.app/joinedEvents?email=${user.email}`).then((res)=>{
+        setJoinedEventData(res.data)
+        setLoading(false)
+        }).catch(error => console.log(error))
         
     }
       
@@ -23,6 +23,9 @@ export const JoinedEvent = ()=>{
         fetchData()
     },[])
 
+    if(loading){
+        return <Loader/>
+    }
 
     return(
         <>

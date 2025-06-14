@@ -16,7 +16,7 @@ export const MainLayout = ()=>{
            <header>
               <Navbar/>
            </header>
-           <main className={` container mx-auto px-3 md:px-6 lg:px-8 xl:px-14 ${isDark ? "bg-gray-900 text-white ":"bg-blue-50 text-black"}`}>
+           <main className={` ${isDark ? "bg-gray-900 text-white ":"bg-blue-50 text-black"}`}>
               <Outlet/>
            </main>
            <Footer>

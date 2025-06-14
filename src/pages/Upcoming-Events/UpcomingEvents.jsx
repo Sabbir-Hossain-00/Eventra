@@ -36,7 +36,7 @@ export const UpcomingEvents = ()=>{
     },[category])
 
     return(
-        <section className="pt-30 pb-10">
+        <section className="pt-30 pb-10 container mx-auto px-3 md:px-6 lg:px-8 xl:px-14">
             <div className="mb-10 flex justify-center items-center gap-10">
                 <form onSubmit={handleSearch} className="">
                 <input value={searchValue} onChange={(e)=> setSearchValue(e.target.value)} type="text" name="search" className="bg-white px-3 py-1.5"/>

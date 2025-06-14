@@ -2,17 +2,20 @@ import { use, useEffect, useState } from "react"
 import { AuthContext } from "../../context/AuthContext"
 import { useNavigate } from "react-router";
 import { useAxiousSecure } from "../../hooks/useAxiousSecure";
+import { Loader } from "../Loader/Loader";
 
 export const ManageEvents = ()=>{
     const {user , isDark} = use(AuthContext);
     const [eventsData , setEventsData] = useState(null);
     const navigate = useNavigate();
     const axiousSecure = useAxiousSecure();
+    const [loading , setLoading] = useState(true)
 
     
     const fetchData = async()=>{
         axiousSecure.get(`https://eventra-server.vercel.app/manageEvents?email=${user.email}`).then((res)=>{
           setEventsData(res.data)
+          setLoading(false)
         }).catch(error => console.log(error))
     }
 
@@ -30,6 +33,9 @@ export const ManageEvents = ()=>{
       }).catch(error => console.log(error))
     }
 
+    if(loading){
+      return <Loader/>
+    }
 
 
     return(

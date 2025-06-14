@@ -1,3 +1,5 @@
+import { ArrowUpRight } from "lucide-react"
+
 export const Gallery = ()=>{
     return(
         <section class="py-16 px-6 sm:px-10 lg:px-20 bg-gray-50 dark:bg-gray-900">
@@ -11,8 +13,8 @@ export const Gallery = ()=>{
           </div>
         
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            <div class="overflow-hidden rounded-xl shadow-lg">
-              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Community event 1" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" />
+            <div class="overflow-hidden rounded-xl shadow-lg cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Community event 1" class="w-full  h-48 object-cover transition-transform duration-300 hover:scale-105" />
             </div>
             <div class="overflow-hidden rounded-xl shadow-lg">
               <img src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=800&q=80" alt="Community event 2" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" />

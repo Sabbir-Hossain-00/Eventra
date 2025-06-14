@@ -1,18 +1,37 @@
-import { use } from "react";
-import { useLoaderData, useNavigate } from "react-router"
+import { use, useEffect, useState } from "react";
+import { useLoaderData, useNavigate, useParams } from "react-router"
 import { AuthContext } from "../../context/AuthContext";
 import { useAxiousSecure } from "../../hooks/useAxiousSecure";
+import { Loader } from "../Loader/Loader";
 
 export const EventDetails = ()=>{
     const {user} = use(AuthContext)
-    const eventData = useLoaderData();
     const navigate = useNavigate();
     const axiousSecure = useAxiousSecure();
-    const {_id,ThumbPhoto,description,eventDate,eventLocation,eventTitle,eventType,userEmail} = eventData ;
+    const {id} = useParams();
+    const [eventData , setEventData] = useState(null)
+    const [loading , setLoading] = useState(true);
     
+    const fetchingData = ()=>{
+        axiousSecure.get(`https://eventra-server.vercel.app/eventDetails/${id}`).then((res)=>{
+          setEventData(res.data)
+          setLoading(false)
+        }).catch(error => console.log(error))
+      }
+
+
+    useEffect(()=>{
+      fetchingData();
+    },[])
+
+   if(loading){
+    return <Loader/>
+   }
+
 
 
     const handleJoinEvent = ()=>{
+      const {_id,ThumbPhoto,description,eventDate,eventLocation,eventTitle,eventType,userEmail} = eventData ;
 
       const joinedEventData = {
         ThumbPhoto,
@@ -33,6 +52,7 @@ export const EventDetails = ()=>{
           navigate("/joined-events")
         }
       }).catch(error => console.log(error))
+
       
     }
     return(
@@ -44,8 +64,8 @@ export const EventDetails = ()=>{
                 alt="Movie" />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">{eventData.eventTitle}</h2>
-              <p>{eventData.description}</p>
+              <h2 className="card-title">{eventData?.eventTitle}</h2>
+              <p>{eventData?.description}</p>
               <div className="card-actions ">
                 <button onClick={handleJoinEvent} className="btn btn-primary">Join Event</button>
               </div>

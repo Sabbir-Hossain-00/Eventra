@@ -1,14 +1,37 @@
-import { use } from "react"
+import { use, useEffect, useState } from "react"
 import { AuthContext } from "../../context/AuthContext"
-import { useLoaderData, useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { useAxiousSecure } from "../../hooks/useAxiousSecure";
+import { Loader } from "../Loader/Loader";
 
 export const UpdateGroup = ()=>{
     const {isDark , user} = use(AuthContext);
     const navigate = useNavigate();
-    const eventData = useLoaderData();
     const axiousSecure = useAxiousSecure();
-    const {_id,ThumbPhoto,description,eventDate,eventLocation,eventTitle,eventType,userEmail} = eventData ;
+    const {id} = useParams();
+    const [eventData , setEventData] = useState(null)
+    const [loading , setLoading] = useState(true);
+    
+    const fetchingData = ()=>{
+        axiousSecure.get(`https://eventra-server.vercel.app/eventDetails/${id}`).then((res)=>{
+          
+          setEventData(res.data)
+          setLoading(false)
+        }).catch(error => console.log(error))
+      }
+
+
+    useEffect(()=>{
+      fetchingData();
+    },[])
+
+   if(loading){
+    return <Loader/>
+   }
+
+   const {_id,ThumbPhoto,description,eventDate,eventLocation,eventTitle,eventType,userEmail} = eventData ;
+    
+
 
     const handleUpdateEvent = (e)=>{
         e.preventDefault();
@@ -135,7 +158,7 @@ export const UpdateGroup = ()=>{
                   type="submit"
                   className="btn w-full border-none bg-purple-500 text-white font-bold py-2 rounded hover:bg-purple-600 transition"
                 >
-                  Create
+                  Update
                 </button>
               </form>
             </div>
