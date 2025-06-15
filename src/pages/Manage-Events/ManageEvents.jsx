@@ -3,6 +3,7 @@ import { AuthContext } from "../../context/AuthContext"
 import { useNavigate } from "react-router";
 import { useAxiousSecure } from "../../hooks/useAxiousSecure";
 import { Loader } from "../Loader/Loader";
+import moment from "moment";
 
 export const ManageEvents = ()=>{
     const {user , isDark} = use(AuthContext);
@@ -59,6 +60,14 @@ export const ManageEvents = ()=>{
               <tbody>
                 {
                   eventsData?.map((signleData)=>{
+
+                    const originalDate = signleData?.eventDate;
+                      const formattedDate = moment
+                        .utc(originalDate)
+                        .utcOffset(6 * 60)
+                        .format("YYYY/MM/DD");
+
+
                     return <tr className="border border-gray-200 text-center" key={signleData._id}>
                               <td className="border border-gray-200">
                                 <div className="flex items-center  gap-3">
@@ -77,9 +86,9 @@ export const ManageEvents = ()=>{
                               </td>
                               <td className="border border-gray-200">{signleData.eventTitle}</td>
                               <td className="border border-gray-200">{signleData.eventType}</td>
-                              <td className="border border-gray-200">{signleData.eventDate}</td>
+                              <td className="border border-gray-200">{formattedDate}</td>
                               <td className="border border-gray-200">
-                                <button onClick={()=>navigate(`/updategroup/${signleData._id}`)} className="btn border-none  bg-amber-300 hover:bg-amber-400  ">Update</button>
+                                <button onClick={()=>navigate(`/updategroup/${signleData._id}`)} className="btn border-none  bg-[#e4c1f9]">Update</button>
                               </td>
                               <td className="border border-gray-200">
                                 <button onClick={()=>handleDeleteEvent(signleData._id)} className="btn border-none bg-rose-500 hover:bg-rose-600 text-white">Delete</button>

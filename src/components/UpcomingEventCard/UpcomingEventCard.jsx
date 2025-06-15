@@ -23,7 +23,7 @@ export const UpcomingEventCard = ({ eventData }) => {
   return (
     <section className="animate-rotate-border rounded-2xl bg-conic/[from_var(--border-angle)] from-white via-[#e4c1f9] to-white from-70% via-80% to-100% p-1">
       
-  <div className="rounded-2xl bg-gradient-to-t from-white to-[#faf4fc] shadow-sm">
+  <div className="rounded-2xl bg-gradient-to-t from-white to-[#faf4fc]">
     <figure>
       <img src={ThumbPhoto} alt="bg-img" className="rounded-t-2xl w-full h-48 object-cover" />
     </figure>

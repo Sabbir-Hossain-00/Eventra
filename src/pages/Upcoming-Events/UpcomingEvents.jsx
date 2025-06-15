@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router"
 import { UpcomingEventCard } from "../../components/UpcomingEventCard/UpcomingEventCard";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { ChevronDown, Search } from "lucide-react";
 
 export const UpcomingEvents = ()=>{
     const initialeventsData = useLoaderData();
@@ -37,24 +38,36 @@ export const UpcomingEvents = ()=>{
 
     return(
         <section className="pt-30 pb-10 container mx-auto px-3 md:px-6 lg:px-8 xl:px-14">
-            <div className="mb-10 flex justify-center items-center gap-10">
-                <form onSubmit={handleSearch} className="">
-                <input value={searchValue} onChange={(e)=> setSearchValue(e.target.value)} type="text" name="search" className="bg-white px-3 py-1.5"/>
-                <button className="btn">Search</button>
-            </form>
-            <div>
+            <div className="mb-10 flex justify-center items-center ">
+
+                 <div className=" relative">
                   <select
                   value={category}
                   onChange={(e)=>setCategory(e.target.value)}
                   required
-                  className="w-full p-2  border rounded bg-transparent"
-                >
-                  <option value="">Select Category</option>
+                  className="appearance-none border-0 border-r border-gray-300 w-fit p-3 pr-6 rounded-none rounded-tl-md rounded-bl-md  bg-gray-200"
+                  >
+                  <option value="">All</option>
                   <option value="Plantation">Plantation</option>
                   <option value="Donation">Donation</option>
                   <option value="Cleanup">Cleanup</option>
-                </select>
-            </div>
+                  </select>
+                  <div className=" absolute top-4 right-1">
+                     <ChevronDown size={18}/>
+                  </div>
+                </div>
+
+                <form onSubmit={handleSearch} className="flex justify-center items-center">
+                  <input 
+                  value={searchValue} 
+                  onChange={(e)=> setSearchValue(e.target.value)} 
+                  type="text" 
+                  name="search" 
+                  placeholder="Search Event"
+                  className="bg-white px-3 md:pr-30 py-3"
+                  />
+                  <button className="btn py-6 rounded-none rounded-tr-md rounded-br-md border-0 bg-[#e4c1f9]"><Search size={18} /></button>
+                </form>
             </div>
            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {
