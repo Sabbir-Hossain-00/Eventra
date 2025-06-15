@@ -1,4 +1,5 @@
 import { Bell, Calendar, ChartNoAxesCombined, Earth, Handshake, Lock } from "lucide-react"
+import { Fade } from "react-awesome-reveal"
 
 export const Feature = ()=>{
     return(
@@ -13,8 +14,8 @@ export const Feature = ()=>{
            </div>
          
            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
-             
-             <div class="relative flex flex-col  xl:p-10 p-6  rounded-xl bg-gradient-to-b from-white to-[#f1dbf7]  hover:shadow-2xl  hover:scale-105 transition-transform duration-300">
+            
+             <div class="relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl bg-gradient-to-b from-white to-[#f1dbf7]  hover:shadow-2xl  hover:scale-105 transition-transform duration-300">
                <div class=" bg-[#fcedfc] p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%] ">
                  <Calendar size={40} />
                </div>
@@ -26,7 +27,7 @@ export const Feature = ()=>{
                </p>
              </div>
          
-             <div class="relative flex flex-col  xl:p-10 p-6  rounded-xl bg-gradient-to-b from-white to-[#f1dbf7]  hover:shadow-2xl  hover:scale-105 transition-transform duration-300">
+             <div class="relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl bg-gradient-to-b from-white to-[#f1dbf7]  hover:shadow-2xl  hover:scale-105 transition-transform duration-300">
                <div class="bg-[#fcedfc] p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%]">
                  <Handshake size={40} />
                </div>
@@ -38,7 +39,7 @@ export const Feature = ()=>{
                </p>
              </div>
          
-             <div class="relative  flex flex-col  xl:p-10 p-6  rounded-xl bg-gradient-to-b from-white to-[#f1dbf7]  hover:shadow-2xl  hover:scale-105 transition-transform duration-300">
+             <div class="relative mt-4  flex flex-col  xl:p-10 p-6  rounded-xl bg-gradient-to-b from-white to-[#f1dbf7]  hover:shadow-2xl  hover:scale-105 transition-transform duration-300">
                <div class="bg-[#fcedfc] p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%]">
                  <ChartNoAxesCombined size={40} />
                </div>

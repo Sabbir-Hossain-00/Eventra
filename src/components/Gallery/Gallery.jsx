@@ -1,10 +1,11 @@
 import { ArrowUpRight } from "lucide-react"
+import { Fade } from "react-awesome-reveal"
 
 export const Gallery = ()=>{
     return(
-        <section class="py-16 px-6 sm:px-10 lg:px-20 bg-gray-50 dark:bg-gray-900">
+        <section class="my-16 rounded-2xl py-16 px-6 sm:px-10 lg:px-20 bg-gray-50">
           <div class="max-w-7xl mx-auto text-center mb-12">
-            <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Moments from Our Events
             </h2>
             <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -13,12 +14,16 @@ export const Gallery = ()=>{
           </div>
         
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            <div class="overflow-hidden rounded-xl shadow-lg cursor-pointer">
-              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Community event 1" class="w-full  h-48 object-cover transition-transform duration-300 hover:scale-105" />
+            <Fade className="rounded-xl" cascade damping={0.1} direction="up">
+                <div class="overflow-hidden rounded-xl shadow-lg cursor-pointer">
+              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Community event 1" class="w-full rounded-2xl  h-48 object-cover transition-transform duration-300 hover:scale-105" />
             </div>
-            <div class="overflow-hidden rounded-xl shadow-lg">
+            </Fade>
+            <Fade className="rounded-xl" cascade damping={0.1} direction="up" >
+                 <div class="overflow-hidden rounded-xl shadow-lg">
               <img src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=800&q=80" alt="Community event 2" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" />
             </div>
+            </Fade>
             <div class="overflow-hidden rounded-xl shadow-lg">
               <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Community event 3" class="w-full h-48 object-cover transition-transform duration-300 hover:scale-105" />
             </div>

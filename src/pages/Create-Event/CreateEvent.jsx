@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './customDatePickerWidth.css';
 import { useAxiousSecure } from "../../hooks/useAxiousSecure";
+import moment from "moment";
 
 export const CreateEvent = ()=>{
     const {user, isDark} = use(AuthContext);
@@ -19,7 +20,10 @@ export const CreateEvent = ()=>{
         const formData = new FormData(form);
         const groupData = Object.fromEntries(formData.entries());
         console.log(groupData)
-        groupData.eventDate = eventDate?.toLocaleDateString('sv-SE');
+
+        // groupData.eventDate = new Date(eventDate);
+        const bdFormattedDate = moment.utc(eventDate).utcOffset(6 * 60).format("YYYY-MM-DD HH:mm:ss");
+        groupData.eventDate = bdFormattedDate;
 
         console.log(groupData)
 
@@ -109,7 +113,7 @@ export const CreateEvent = ()=>{
                   <DatePicker
                   selected={eventDate}
                   onChange={(date)=> setEventDate(date)}
-                  minDate={new Date()}
+                  // minDate={new Date()}
                   placeholderText="Select Event Date"
                   className=" w-full p-2 mb-4 border rounded bg-transparent"
                   required

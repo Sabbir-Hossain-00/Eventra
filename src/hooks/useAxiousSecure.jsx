@@ -4,6 +4,7 @@ import { AuthContext } from "../context/AuthContext";
 
 const axiousInstance = axios.create({
     baseURL:'https://eventra-server.vercel.app'
+    // baseURL:'http://localhost:3000'
 })
 
 export const useAxiousSecure = ()=>{
