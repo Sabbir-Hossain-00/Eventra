@@ -7,7 +7,7 @@ export const Footer = ()=>{
   const {isDark , user} = use(AuthContext)
     return(
         <section className={` ${isDark ? "bg-black":"bg-white"}`}>
-            <footer className="mt-20 py-12 px-6 sm:px-10 lg:px-20 shadow-lg">
+            <footer className="pt-20 py-12 px-6 sm:px-10 lg:px-20 shadow-lg">
               <div className="container mx-auto px-3 md:px-6 lg:px-8 xl:px-14 flex justify-between items-start">
             
                 

@@ -4,7 +4,7 @@ export const Gallery = ()=>{
     return(
         <section class="my-16 rounded-2xl py-16 px-6 sm:px-10 lg:px-20 bg-gradient-to-b from-white to-gray-100">
           <div class="max-w-7xl mx-auto text-center mb-12">
-            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 class="text-2xl md:text-4xl font-semibold text-gray-900 dark:text-white mb-4">
               Moments from Our Events
             </h2>
             <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">

@@ -5,7 +5,7 @@ export const Feature = ()=>{
     return(
         <section class="py-16 px-6 sm:px-10 lg:px-20 bg-white rounded-2xl">
            <div class="max-w-7xl mx-auto text-center mb-20">
-             <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+             <h2 class="text-2xl md:text-4xl font-semibold text-gray-900 dark:text-white mb-4">
                Why Choose Eventra?
              </h2>
              <p class=" text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
