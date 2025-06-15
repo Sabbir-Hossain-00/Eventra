@@ -3,7 +3,7 @@ import { Fade } from "react-awesome-reveal"
 
 export const Feature = ()=>{
     return(
-        <section class="py-16 px-6 sm:px-10 lg:px-20 bg-white rounded-2xl">
+        <section class="py-16 px-6 sm:px-10 lg:px-20 border-2 border-fuchsia-100 bg-white rounded-2xl">
            <div class="max-w-7xl mx-auto text-center mb-20">
              <h2 class="text-2xl md:text-4xl font-semibold text-gray-900 dark:text-white mb-4">
                Why Choose Eventra?

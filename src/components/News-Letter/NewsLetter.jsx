@@ -10,17 +10,17 @@ export const NewsLetter = ()=>{
               Subscribe to Eventra updates and never miss a chance to join powerful community-driven events. Be the first to hear about local missions, inspiring stories, and real opportunities to lead change.
             </p>
         
-            <form className="flex flex-col sm:flex-row items-center justify-center">
+            <form className="flex  items-center justify-center">
               <input
                 type="email"
-                placeholder="Your awesome email"
+                placeholder="Your email . . ."
                 className="w-full sm:w-auto pl-4 pr-20 py-3 rounded-tl-full rounded-bl-full bg-fuchsia-50"
               />
               <button
                 type="submit"
                 className="bg-[#e4c1f9] transition  font-semibold px-6 py-3 rounded-tr-full rounded-br-full  shadow-lg"
               >
-                Subscribe Now
+                Subscribe 
               </button>
             </form>
         
