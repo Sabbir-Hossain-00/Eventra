@@ -19,7 +19,9 @@ export const UpdateGroup = ()=>{
     
     const fetchingData = ()=>{
         axiousSecure.get(`https://eventra-server.vercel.app/eventDetails/${id}`).then((res)=>{
+          console.log(res.data)
           setEventData(res.data)
+          setUpdateEventDate(res.data.eventDate)
           setLoading(false)
         }).catch(error => console.log(error))
       }
@@ -100,6 +102,19 @@ export const UpdateGroup = ()=>{
                 <div className="flex md:flex-row flex-col gap-2 mb-4">
                   <div className="w-full">
                     <label className="block mb-2 font-medium">
+                      User Name:<span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="userName"
+                      value={user.displayName}
+                      readOnly
+                      className="w-full p-2 border rounded bg-transparent"
+                      required
+                    />
+                  </div>
+                  <div className="w-full">
+                    <label className="block mb-2 font-medium">
                       User Email:<span className="text-red-500">*</span>
                     </label>
                     <input
@@ -138,7 +153,7 @@ export const UpdateGroup = ()=>{
                   selected={updateEventDate}
                   onChange={(date)=> setUpdateEventDate(date)}
                   minDate={new Date()}
-                  placeholderText="Select Event Date"
+                  placeholderText="Enter Date"
                   className=" w-full p-2 mb-4 border rounded bg-transparent"
                   required
                 />
