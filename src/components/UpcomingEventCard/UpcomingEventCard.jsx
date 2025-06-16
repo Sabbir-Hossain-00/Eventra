@@ -1,6 +1,8 @@
 import moment from "moment";
 import { Link } from "react-router";
 import "./AnimatedBorder.css"; 
+import { use } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 export const UpcomingEventCard = ({ eventData }) => {
   const {
@@ -13,6 +15,7 @@ export const UpcomingEventCard = ({ eventData }) => {
     eventType,
     userEmail,
   } = eventData;
+  const {isDark} = use(AuthContext);
 
   const originalDate = eventDate;
   const formattedDate = moment
@@ -21,9 +24,9 @@ export const UpcomingEventCard = ({ eventData }) => {
     .format("YYYY/MM/DD");
 
   return (
-    <section className="animate-rotate-border rounded-2xl bg-conic/[from_var(--border-angle)] from-white via-[#e4c1f9] to-white from-60% via-70% to-90% p-1">
+    <section className={`animate-rotate-border rounded-2xl bg-conic/[from_var(--border-angle)] from-60% via-90% to-100% p-1 ${isDark ? "from-black via-[#006d77] to-black":"from-white via-[#e4c1f9] to-white"}`}>
       
-  <div className="rounded-2xl bg-gradient-to-t from-white to-[#faf4fc]">
+  <div className={`rounded-2xl ${isDark ? "bg-[#000000]":"bg-white"}`}>
     <figure>
       <img src={ThumbPhoto} alt="bg-img" className="rounded-t-2xl w-full h-48 object-cover" />
     </figure>
@@ -33,7 +36,7 @@ export const UpcomingEventCard = ({ eventData }) => {
       <p><span className=" font-medium">Location : </span>{eventLocation}</p>
       <p><span className=" font-medium">Event Date : </span>{formattedDate}</p>
       <div className="card-actions">
-        <Link to={`/event-details/${_id}`} className="btn bg-[#e4c1f9]">
+        <Link to={`/event-details/${_id}`} className={`btn shadow-none border-none ${isDark? "bg-[#006d77] text-white": "bg-[#e4c1f9] text-black"}`}>
           View Event
         </Link>
       </div>

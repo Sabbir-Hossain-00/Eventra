@@ -1,14 +1,16 @@
 import { useLoaderData } from "react-router"
 import { UpcomingEventCard } from "../../components/UpcomingEventCard/UpcomingEventCard";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { ChevronDown, Search } from "lucide-react";
+import { AuthContext } from "../../context/AuthContext";
 
 export const UpcomingEvents = ()=>{
     const initialeventsData = useLoaderData();
     const [category, setCategory] = useState("");
-    const [searchValue , setSearchValue] = useState("")
-    const [eventsData , setEventData] = useState(initialeventsData)
+    const [searchValue , setSearchValue] = useState("");
+    const [eventsData , setEventData] = useState(initialeventsData);
+    const {isDark} = use(AuthContext);
 
 
 
@@ -51,7 +53,7 @@ export const UpcomingEvents = ()=>{
                   value={category}
                   onChange={(e)=>setCategory(e.target.value)}
                   required
-                  className="appearance-none border-0  w-fit p-3 pr-6 rounded-none rounded-tl-lg rounded-bl-lg  bg-[#e4c1f9]"
+                  className={`appearance-none border-0  w-fit p-3 pr-6 rounded-none rounded-tl-lg rounded-bl-lg  ${isDark? "bg-[#006d77]" :"bg-[#e4c1f9]"}`}
                   >
                   <option value="">All</option>
                   <option value="Plantation">Plantation</option>
@@ -70,9 +72,9 @@ export const UpcomingEvents = ()=>{
                   type="text" 
                   name="search" 
                   placeholder="Search an event"
-                  className="bg-white md:px-6 pl-3 md:pr-40 py-3"
+                  className={`bg-white md:px-6 pl-3 md:pr-40 py-3 text-black`}
                   />
-                  <button className="btn py-6 rounded-none rounded-tr-lg rounded-br-lg border-0 bg-[#e4c1f9]"><Search size={18} /></button>
+                  <button className={`btn py-6 rounded-none rounded-tr-lg shadow-none rounded-br-lg border-0 ${isDark? "bg-[#006d77] text-white" :"bg-[#e4c1f9]"}`}><Search size={18} /></button>
                 </form>
             </div>
 
