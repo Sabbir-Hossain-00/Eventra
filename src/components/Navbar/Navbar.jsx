@@ -10,6 +10,7 @@ export const Navbar = () => {
 
   const toggleTheme = () => {
     setIsDark(prev => !prev);
+    localStorage.setItem("eventraTheme",JSON.stringify(!isDark))
   };
 
   const handleLogout = () => {

@@ -50,6 +50,12 @@ export const AuthProvider = ({children})=>{
     }
 
 
+    useEffect(()=>{
+        const theme = JSON.parse(localStorage.getItem("eventraTheme"));
+        setIsDark(theme)
+    },[])
+
+
 
 
 
@@ -64,10 +70,6 @@ export const AuthProvider = ({children})=>{
         isDark,
         setIsDark,
     }
-
-    // if(loading){
-    //     return <Loader/>
-    // }
 
     return(
         <AuthContext value={userInfo}>{children}</AuthContext>

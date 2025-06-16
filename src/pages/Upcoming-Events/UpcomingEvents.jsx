@@ -74,7 +74,7 @@ export const UpcomingEvents = ()=>{
                   placeholder="Search an event"
                   className={`bg-white md:px-6 pl-3 md:pr-40 py-3 text-black`}
                   />
-                  <button className={`btn py-6 rounded-none rounded-tr-lg shadow-none rounded-br-lg border-0 ${isDark? "bg-[#006d77] text-white" :"bg-[#e4c1f9]"}`}><Search size={18} /></button>
+                  <button className={`btn py-[23px] rounded-none rounded-tr-lg shadow-none rounded-br-lg border-0 ${isDark? "bg-[#006d77] text-white" :"bg-[#e4c1f9]"}`}><Search size={18} /></button>
                 </form>
             </div>
 
