@@ -26,13 +26,41 @@ export const ManageEvents = ()=>{
 
 
     const handleDeleteEvent = (id)=>{
-      axiousSecure.delete(`https://eventra-server.vercel.app/events/${id}`).then((result)=>{
-        if(result.data.deletedCount){
-          const remainingEvents = eventsData.filter((item)=> item._id !== id);
-          setEventsData(remainingEvents)
-        }
-      }).catch(error => console.log(error))
+
+      
+
+        swal({
+          title: "Are you sure?",
+          text: "Do You want to Delete this Group ?",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        }).then((willDelete) => {
+          if (willDelete) {
+            axiousSecure.delete(`https://eventra-server.vercel.app/events/${id}`).then((result)=>{
+          if(result.data.deletedCount){
+            swal("Deleted", "Your file has been deleted" ,{
+               icon: "success",
+            });
+            const remainingEvents = eventsData.filter((item)=> item._id !== id);
+            setEventsData(remainingEvents)
+         }else{
+            swal("Failed to delete the file!", { icon: "error" });
+         }
+        }).catch(()=>{
+           swal("Something went wrong!", { icon: "error" });
+        })
+          } 
+        });
     }
+
+    
+
+
+    
+
+
+    
 
     if(loading){
       return <Loader/>

@@ -28,14 +28,14 @@ export const JoinedEvent = ()=>{
     }
 
     return(
-        <>
-          <div>
+        <section className="py-20 pt-30">
+          <div className="grid grid-cols-1 gap-6">
             {
                 joinedEventsData?.map((joinedEventData)=>{
                     return <JoinedEventCard key={joinedEventData._id} joinedEventData={joinedEventData} />
                 })
             }
           </div>
-        </>
+        </section>
     )
 }
