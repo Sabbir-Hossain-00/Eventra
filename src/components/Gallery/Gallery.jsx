@@ -1,13 +1,16 @@
+import { use } from "react"
 import { Fade } from "react-awesome-reveal"
+import { AuthContext } from "../../context/AuthContext"
 
 export const Gallery = ()=>{
+  const {isDark} = use(AuthContext)
     return(
-        <section class="my-16 rounded-2xl py-16 px-6 sm:px-10 lg:px-20 bg-gradient-to-b from-white to-gray-100">
+        <section class={`my-16 rounded-2xl py-16 px-6 sm:px-10 lg:px-20 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#1b263b]": "bg-gradient-to-b from-white to-gray-100"}`}>
           <div class="max-w-7xl mx-auto text-center mb-12">
-            <h2 class="text-2xl md:text-4xl font-semibold text-gray-900 dark:text-white mb-4">
+            <h2 class="text-2xl md:text-4xl font-semibold mb-4">
               Moments from Our Events
             </h2>
-            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p class="text-lg  max-w-3xl mx-auto">
               A glimpse into the energy, passion, and community spirit captured at Eventra gatherings across neighborhoods.
             </p>
           </div>

@@ -10,9 +10,8 @@ export const Footer = ()=>{
             <footer className="pt-20 py-12 px-6 sm:px-10 lg:px-20 shadow-lg">
               <div className="container mx-auto px-3 md:px-6 lg:px-8 xl:px-20 flex flex-col md:flex-row gap-12 md:gap-0  justify-between items-start">
             
-                
                 <div className="space-y-4">
-                  <h3 className="text-3xl font-bold tracking-wide text-[#e4c1f9]">Eventra</h3>
+                  <h3 className={`text-3xl font-medium tracking-wide ${isDark ? "text-[#006d77]" :"text-[#e4c1f9]"}`}>Eventra</h3>
                   <p className={`max-w-xs ${isDark? "text-white" : "text-black"} `}>
                     Bringing communities together through powerful events and shared purpose. Join us and be the change you want to see.
                   </p>
@@ -37,8 +36,8 @@ export const Footer = ()=>{
                 <div>
                   <h4 className={`text-xl font-semibold mb-4 ${isDark? "text-white" : "text-black"}`}>Quick Links</h4>
                   <ul className="space-y-3">
-                    <li className={`${isDark ? "text-white" : ""}`}><NavLink to="/" className={({ isActive }) => isActive ? "text-[#e4c1f9] font-medium text-sm" : "font-medium text-sm"}>Home</NavLink></li>
-                    <li className={`${isDark ? "text-white" : ""}`}><NavLink to="/upcoming-events" className={({ isActive }) => isActive ? "text-[#e4c1f9] font-medium text-sm" : "font-medium text-sm"}>Upcoming Events</NavLink></li>
+                    <li className={`${isDark ? "text-white" : ""}`}><NavLink to="/" className="text-sm font-medium">Home</NavLink></li>
+                    <li className={`${isDark ? "text-white" : ""}`}><NavLink to="/upcoming-events" className="text-sm font-medium">Upcoming Events</NavLink></li>
                   </ul>
                 </div>
             
