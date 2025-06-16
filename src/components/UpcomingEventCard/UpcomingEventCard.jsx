@@ -21,7 +21,7 @@ export const UpcomingEventCard = ({ eventData }) => {
     .format("YYYY/MM/DD");
 
   return (
-    <section className="animate-rotate-border rounded-2xl bg-conic/[from_var(--border-angle)] from-white via-[#e4c1f9] to-white from-70% via-80% to-100% p-1">
+    <section className="animate-rotate-border rounded-2xl bg-conic/[from_var(--border-angle)] from-white via-[#e4c1f9] to-white from-60% via-70% to-90% p-1">
       
   <div className="rounded-2xl bg-gradient-to-t from-white to-[#faf4fc]">
     <figure>
@@ -29,8 +29,9 @@ export const UpcomingEventCard = ({ eventData }) => {
     </figure>
     <div className="card-body">
       <h2 className="card-title">{eventTitle}</h2>
-      <p>{formattedDate}</p>
-      <p>{description}</p>
+      <p><span className=" font-medium">Event Type : </span>{eventType}</p>
+      <p><span className=" font-medium">Location : </span>{eventLocation}</p>
+      <p><span className=" font-medium">Event Date : </span>{formattedDate}</p>
       <div className="card-actions">
         <Link to={`/event-details/${_id}`} className="btn bg-[#e4c1f9]">
           View Event

@@ -3,6 +3,7 @@ import {  useNavigate, useParams } from "react-router"
 import { AuthContext } from "../../context/AuthContext";
 import { useAxiousSecure } from "../../hooks/useAxiousSecure";
 import { Loader } from "../Loader/Loader";
+import moment from "moment";
 
 export const EventDetails = ()=>{
     const {user} = use(AuthContext)
@@ -28,10 +29,15 @@ export const EventDetails = ()=>{
     return <Loader/>
    }
 
+    const {_id,ThumbPhoto,description,eventDate,eventLocation,eventTitle,eventType,userEmail} = eventData ;
 
+    const originalDate = eventDate;
+      const formattedDate = moment
+        .utc(originalDate)
+        .utcOffset(6 * 60)
+        .format("YYYY/MM/DD");
 
     const handleJoinEvent = ()=>{
-      const {_id,ThumbPhoto,description,eventDate,eventLocation,eventTitle,eventType,userEmail} = eventData ;
 
       const joinedEventData = {
         ThumbPhoto,
@@ -56,18 +62,22 @@ export const EventDetails = ()=>{
       
     }
     return(
-        <section className="pt-30 pb-10">
-          <div className="mx-auto w-1/2 card card-side bg-base-100 shadow-sm">
+        <section className="pt-30 pb-10 container mx-auto px-3 md:px-6 lg:px-8 xl:px-14">
+          <div className="px-10 md:px-20 py-20 card md:card-side bg-gradient-to-l from-white to-[#eee5f1] border-2 rounded-2xl border-white">
             <figure>
               <img
-                src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-                alt="Movie" />
+                src={ThumbPhoto}
+                alt="Movie"
+                className="rounded-2xl" />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">{eventData?.eventTitle}</h2>
-              <p>{eventData?.description}</p>
+              <h2 className="card-title lg:text-3xl text-2xl">{eventTitle}</h2>
+              <p className="text-base lg:text-lg"><span className="font-medium">Event Type :</span> <span className="bg-fuchsia-100 text-base py-2 px-4 rounded-full">{eventTitle}</span></p>
+              <p className="text-base lg:text-lg"><span className="font-medium">Event Date :</span> {formattedDate}</p>
+              <p className="text-base lg:text-lg"><span className="font-medium">Location :</span> {eventLocation}</p>
+              <p className="text-base lg:text-lg"><span className="font-medium">Description :</span> {description}</p>
               <div className="card-actions ">
-                <button onClick={handleJoinEvent} className="btn btn-primary">Join Event</button>
+                <button onClick={handleJoinEvent} className="btn bg-[#e4c1f9]">Join Event</button>
               </div>
             </div>
           </div>

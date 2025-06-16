@@ -22,7 +22,7 @@ export const CreateEvent = ()=>{
         console.log(groupData)
 
         // groupData.eventDate = new Date(eventDate);
-        const bdFormattedDate = moment.utc(eventDate).utcOffset(6 * 60).format("YYYY-MM-DD HH:mm:ss");
+        const bdFormattedDate = moment(eventDate).utcOffset(6 * 60).format("YYYY-MM-DD HH:mm:ss");
         groupData.eventDate = bdFormattedDate;
 
         console.log(groupData)
@@ -113,7 +113,7 @@ export const CreateEvent = ()=>{
                   <DatePicker
                   selected={eventDate}
                   onChange={(date)=> setEventDate(date)}
-                  // minDate={new Date()}
+                  minDate={new Date()}
                   placeholderText="Select Event Date"
                   className=" w-full p-2 mb-4 border rounded bg-transparent"
                   required

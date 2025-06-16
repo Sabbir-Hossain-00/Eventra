@@ -3,6 +3,10 @@ import { AuthContext } from "../../context/AuthContext"
 import { useNavigate, useParams } from "react-router";
 import { useAxiousSecure } from "../../hooks/useAxiousSecure";
 import { Loader } from "../Loader/Loader";
+import moment from "moment";
+import "react-datepicker/dist/react-datepicker.css";
+import '../Create-Event/customDatePickerWidth.css';
+import DatePicker from "react-datepicker";
 
 export const UpdateGroup = ()=>{
     const {isDark , user} = use(AuthContext);
@@ -11,6 +15,7 @@ export const UpdateGroup = ()=>{
     const {id} = useParams();
     const [eventData , setEventData] = useState(null)
     const [loading , setLoading] = useState(true);
+    const [updateEventDate , setUpdateEventDate] = useState(null)
     
     const fetchingData = ()=>{
         axiousSecure.get(`https://eventra-server.vercel.app/eventDetails/${id}`).then((res)=>{
@@ -37,6 +42,10 @@ export const UpdateGroup = ()=>{
         const form = e.target ;
         const formData = new FormData(form);
         const updatedData = Object.fromEntries(formData.entries());
+        const bdFormattedDate = moment(updateEventDate).utcOffset(6 * 60).format("YYYY-MM-DD HH:mm:ss");
+        updatedData.eventDate = bdFormattedDate;
+        console.log(bdFormattedDate)
+
         axiousSecure.put(`https://eventra-server.vercel.app/events/${_id}` , updatedData).then((result)=>{
             if(result.data.modifiedCount){
                 swal("Event Updated Successfully !", "", "success");
@@ -122,14 +131,18 @@ export const UpdateGroup = ()=>{
                 <label className="block mb-2 font-medium">
                  Event Date:<span className="text-red-500">*</span>
                 </label>
-                <input
-                  type="date"
-                  name="eventDate"
-                  defaultValue={eventDate}
-                  min={new Date().toISOString().split("T")[0]}
-                  className="w-full p-2 mb-4 border  rounded bg-transparent"
+
+
+                <div className="customDatePickerWidth">
+                  <DatePicker
+                  selected={updateEventDate}
+                  onChange={(date)=> setUpdateEventDate(date)}
+                  minDate={new Date()}
+                  placeholderText="Select Event Date"
+                  className=" w-full p-2 mb-4 border rounded bg-transparent"
                   required
                 />
+                </div>
         
                 <label className="block mb-2 font-medium">
                  Thumbnail Image URL:<span className="text-red-500">*</span>
