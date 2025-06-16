@@ -26,6 +26,13 @@ export const EventDetails = ()=>{
       fetchingData();
     },[])
 
+    useEffect(() => {
+        document.title = "Event-Details - Eventra";
+        return () => {
+          document.title = "Eventra"; // reset on unmount
+        };
+      }, []);
+
    if(loading){
     return <Loader/>
    }
@@ -36,7 +43,7 @@ export const EventDetails = ()=>{
       const formattedDate = moment
         .utc(originalDate)
         .utcOffset(6 * 60)
-        .format("YYYY/MM/DD");
+        .format("DD/MM/YYYY");
 
     const handleJoinEvent = ()=>{
 
@@ -62,8 +69,10 @@ export const EventDetails = ()=>{
 
       
     }
+
     return(
-        <section className="pt-30 pb-10 container mx-auto px-3 md:px-6 lg:px-8 xl:px-20">
+        <section className="md:pt-50 pt-30 min-h-screen pb-10 container mx-auto px-3 md:px-6 lg:px-8 xl:px-20">
+          <button onClick={()=>navigate("/")} className={`btn mb-10 shadow-none border-none ${isDark? "bg-[#006d77] text-white": "bg-[#e4c1f9] text-black"}`}>Go Back</button>
           <Fade>
               <div className={`px-3 md:px-20 md:py-20 py-4 card lg:card-side border-2 rounded-2xl  ${isDark ? "bg-gradient-to-l from-[#02272b] to-[#000000] border-black":" bg-gradient-to-l from-white to-[#eee5f1] border-white"}`}>
             <figure className="w-full">
@@ -79,7 +88,7 @@ export const EventDetails = ()=>{
               <p className=""><span className="font-medium">Location :</span> {eventLocation}</p>
               <p className=""><span className="font-medium">Description :</span> {description}</p>
               <div className="card-actions ">
-                <button className={`btn shadow-none border-none ${isDark? "bg-[#006d77] text-white" : "bg-[#e4c1f9] text-black"}`}>Join Event</button>
+                <button onClick={handleJoinEvent} className={`btn shadow-none border-none ${isDark? "bg-[#006d77] text-white" : "bg-[#e4c1f9] text-black"}`}>Join Event</button>
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import { useNavigate } from "react-router";
@@ -19,13 +19,10 @@ export const CreateEvent = ()=>{
         const form = e.target;
         const formData = new FormData(form);
         const groupData = Object.fromEntries(formData.entries());
-        console.log(groupData)
 
         // groupData.eventDate = new Date(eventDate);
         const bdFormattedDate = moment(eventDate).utcOffset(6 * 60).format("YYYY-MM-DD HH:mm:ss");
         groupData.eventDate = bdFormattedDate;
-
-        console.log(groupData)
 
         axiousSecure.post("https://eventra-server.vercel.app/events", groupData).then((result)=>{
             if(result.data.insertedId){
@@ -34,12 +31,21 @@ export const CreateEvent = ()=>{
             }
         }).catch(error => console.log(error))
     }
+
+
+    useEffect(() => {
+            document.title = "Create-Event - Eventra";
+            return () => {
+              document.title = "Eventra"; // reset on unmount
+            };
+    }, []);
+
     return(
         <>
           <div
               className={`mt-20 py-10 min-h-screen flex items-center justify-center p-4 transition-all duration-500 ${
                 isDark
-                  ? "bg-gradient-to-br from-[#006d77] via-[#335c67] to-[#3c6e71] text-gray-300"
+                  ? "bg-gradient-to-br from-[#006d77] via-[#0a9396] to-[#94d2bd] text-gray-300"
                   : "bg-gradient-to-br from-purple-300 via-blue-200 to-blue-300 text-gray-800"
               }`}
             >

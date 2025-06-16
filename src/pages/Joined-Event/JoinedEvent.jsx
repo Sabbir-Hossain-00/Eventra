@@ -22,7 +22,14 @@ export const JoinedEvent = ()=>{
       
     useEffect(()=>{
         fetchData()
-    },[])
+    },[]);
+
+    useEffect(() => {
+        document.title = "Joined-Event - Eventra";
+        return () => {
+          document.title = "Eventra"; // reset on unmount
+        };
+      }, []);
 
     if(loading){
         return <Loader/>
@@ -31,8 +38,9 @@ export const JoinedEvent = ()=>{
         return <EmptyJoinedEvent/>
     }
 
+      
     return(
-        <section className="py-20 pt-30 container mx-auto px-3 md:px-6 lg:px-8 xl:px-20">
+        <section className="py-20 pt-30 min-h-screen container mx-auto px-3 md:px-6 lg:px-8 xl:px-20">
 
           <div className="mb-12">
                 <h1 className="md:text-3xl text-2xl text-center font-medium mb-2">Your Joined Events <span className={`${isDark?"text-[#006d77]":"text-[#e4c1f9]"}`}>Overview</span></h1>
@@ -58,7 +66,7 @@ export const JoinedEvent = ()=>{
                       const formattedDate = moment
                         .utc(originalDate)
                         .utcOffset(6 * 60)
-                        .format("YYYY/MM/DD");
+                        .format("DD/MM/YYYY");
   
   
                     return <tr className="border border-gray-200 text-center" key={signleData._id}>

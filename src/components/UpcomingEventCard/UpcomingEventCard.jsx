@@ -21,7 +21,7 @@ export const UpcomingEventCard = ({ eventData }) => {
   const formattedDate = moment
     .utc(originalDate)
     .utcOffset(6 * 60)
-    .format("YYYY/MM/DD");
+    .format("DD/MM/YYYY");
 
   return (
     <section className={`animate-rotate-border rounded-2xl bg-conic/[from_var(--border-angle)] from-60% via-90% to-100% p-1 ${isDark ? "from-black via-[#006d77] to-black":"from-white via-[#e4c1f9] to-white"}`}> 

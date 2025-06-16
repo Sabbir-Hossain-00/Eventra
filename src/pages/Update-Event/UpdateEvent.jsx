@@ -8,7 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import '../Create-Event/customDatePickerWidth.css';
 import DatePicker from "react-datepicker";
 
-export const UpdateGroup = ()=>{
+export const UpdateEvent = ()=>{
     const {isDark , user} = use(AuthContext);
     const navigate = useNavigate();
     const axiousSecure = useAxiousSecure();
@@ -19,7 +19,6 @@ export const UpdateGroup = ()=>{
     
     const fetchingData = ()=>{
         axiousSecure.get(`https://eventra-server.vercel.app/eventDetails/${id}`).then((res)=>{
-          console.log(res.data)
           setEventData(res.data)
           setUpdateEventDate(res.data.eventDate)
           setLoading(false)
@@ -30,6 +29,12 @@ export const UpdateGroup = ()=>{
     useEffect(()=>{
       fetchingData();
     },[])
+    useEffect(() => {
+        document.title = "Update-Event - Eventra";
+        return () => {
+          document.title = "Eventra"; // reset on unmount
+        };
+      }, []);
 
    if(loading){
     return <Loader/>
@@ -46,7 +51,6 @@ export const UpdateGroup = ()=>{
         const updatedData = Object.fromEntries(formData.entries());
         const bdFormattedDate = moment(updateEventDate).utcOffset(6 * 60).format("YYYY-MM-DD HH:mm:ss");
         updatedData.eventDate = bdFormattedDate;
-        console.log(bdFormattedDate)
 
         axiousSecure.put(`https://eventra-server.vercel.app/events/${_id}` , updatedData).then((result)=>{
             if(result.data.modifiedCount){
@@ -57,12 +61,14 @@ export const UpdateGroup = ()=>{
 
     }
 
+
+
     return(
         <>
             <div
               className={`mt-20 py-10 min-h-screen flex items-center justify-center p-4 transition-all duration-500 ${
                 isDark
-                  ? "bg-gradient-to-br from-[#006d77] via-[#335c67] to-[#3c6e71] text-gray-300"
+                  ? "bg-gradient-to-br from-[#006d77] via-[#0a9396] to-[#94d2bd] text-gray-300"
                   : "bg-gradient-to-br from-purple-300 via-blue-200 to-blue-300 text-gray-800"
               }`}
             >

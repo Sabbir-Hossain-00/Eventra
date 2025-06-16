@@ -12,8 +12,6 @@ export const Login = ()=>{
     const [errorMessage , setErrorMessage] = useState(false);
     const [isShow , setIsShow] = useState(false)
 
-    // console.log(location);
-
     const handleSignIn = (e)=>{
         setErrorMessage(false)
         e.preventDefault();
@@ -33,7 +31,7 @@ export const Login = ()=>{
 
     const handleGoogleRegister = ()=>{
         googleSignin().then((result)=>{
-            swal("Login Successful!", "Welcome to HobMeet", "success");
+            swal("Login Successful!", "Welcome to Eventra", "success");
             navigate(`${location.state || "/"}`);
         }).catch(erroe => console.log(erroe.message))
     }

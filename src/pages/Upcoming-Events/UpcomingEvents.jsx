@@ -22,7 +22,6 @@ export const UpcomingEvents = ()=>{
     useEffect(()=>{
         if(searchValue){
             axios.get(`https://eventra-server.vercel.app/upcomingEventsByTitle?title=${searchValue}`).then((res)=>{
-            console.log(res.data)
             setEventData(res.data)
         }).then(error => console.log(error))
         }
@@ -32,11 +31,17 @@ export const UpcomingEvents = ()=>{
     useEffect(()=>{
         if(category){
             axios.get(`https://eventra-server.vercel.app/upcomingEventsByCategory?category=${category}`).then((res)=>{
-            console.log(res.data)
             setEventData(res.data)
         }).then(error => console.log(error))
         }
     },[category])
+
+    useEffect(() => {
+        document.title = "Upcoming-Events - Eventra";
+        return () => {
+          document.title = "Eventra"; // reset on unmount
+        };
+      }, []);
 
     return(
         <section className="pt-30 pb-10 container mx-auto px-3 md:px-6 lg:px-8 xl:px-20">

@@ -8,9 +8,9 @@ import { CreateEvent } from "../pages/Create-Event/CreateEvent";
 import { UpcomingEvents } from "../pages/Upcoming-Events/UpcomingEvents";
 import { EventDetails } from "../pages/Event-Details/EventDetails";
 import { ManageEvents } from "../pages/Manage-Events/ManageEvents";
-import { UpdateGroup } from "../pages/Update-Group/UpdateGroup";
 import { JoinedEvent } from "../pages/Joined-Event/JoinedEvent";
 import { Error } from "../pages/Error/Error";
+import { UpdateEvent } from "../pages/Update-Event/UpdateEvent";
 
 export const router = createBrowserRouter([
     {
@@ -49,7 +49,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:"/updategroup/:id",
-                element:<PrivateRoute><UpdateGroup/></PrivateRoute>
+                element:<PrivateRoute><UpdateEvent/></PrivateRoute>
             },
             {
                 path:"/joined-events",

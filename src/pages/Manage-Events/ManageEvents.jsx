@@ -57,7 +57,12 @@ export const ManageEvents = ()=>{
         });
     }
 
-    
+    useEffect(() => {
+        document.title = "Manage-Event - Eventra";
+        return () => {
+          document.title = "Eventra"; // reset on unmount
+        };
+      }, []);
     
 
     if(loading){
@@ -95,7 +100,7 @@ export const ManageEvents = ()=>{
                       const formattedDate = moment
                         .utc(originalDate)
                         .utcOffset(6 * 60)
-                        .format("YYYY/MM/DD");
+                        .format("DD/MM/YYYY");
 
 
                     return <tr className="border border-gray-200 text-center" key={signleData._id}>

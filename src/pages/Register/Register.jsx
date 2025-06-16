@@ -48,7 +48,7 @@ export const Register = ()=>{
 
         createUser(email , password).then((result)=>{
             updateUser({displayName : name , photoURL : photo}).then((result)=>{
-                swal("Registration Successful!", "Welcome to HobMeet", "success");
+                swal("Registration Successful!", "Welcome to Eventra", "success");
                  navigate(`${location.state || "/"}`);
 
             }).catch((error)=>{
@@ -80,7 +80,7 @@ export const Register = ()=>{
                     <input type="text" name="name" required className={`input ${isDark? "text-black":""}`} placeholder="Name" />
 
                     <label className={`label ${isDark? "text-white":"text-black"}`}>Photo</label>
-                    <input type="text" name="photo" className={`input ${isDark? "text-black":""}`} placeholder="Photo URL" />
+                    <input type="text" name="photo" required className={`input ${isDark? "text-black":""}`} placeholder="Photo URL" />
 
 
                     <label className={`label ${isDark? "text-white":"text-black"}`}>Email</label>

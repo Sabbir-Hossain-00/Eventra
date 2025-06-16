@@ -18,7 +18,7 @@ export const NewsLetter = ()=>{
               <input
                 type="email"
                 placeholder="Enter your email "
-                className={`w-full sm:w-auto pl-4 pr-20 py-3 rounded-tl-full rounded-bl-full ${isDark ? "bg-[#adf8fd] text-black" : "bg-fuchsia-50"}`}
+                className={`w-full sm:w-auto pl-4 pr-20 py-3 rounded-tl-full rounded-bl-full ${isDark ? "bg-[#ddfdff] text-black" : "bg-fuchsia-50"}`}
               />
               <button
                 type="submit"
