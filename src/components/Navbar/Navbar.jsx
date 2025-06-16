@@ -42,6 +42,7 @@ export const Navbar = () => {
             </ul>
           </div>
           <div className="flex items-center">
+            <img className="w-12 mt-1" src={isDark? "https://i.ibb.co/bMvnf5GX/Chat-GPT-Image-Jun-16-2025-11-27-58-PM.png": "https://i.ibb.co/xKhwZF7w/Chat-GPT-Image-Jun-16-2025-11-29-55-PM.png"} alt="" />
             <a className={`font-medium md:text-2xl text-lg hidden md:block ${isDark ? "text-[#006d77]" : "text-[#e4c1f9]"}`}>Eventra</a>
           </div>
         </div>
