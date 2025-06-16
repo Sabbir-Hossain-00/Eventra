@@ -3,6 +3,7 @@ import { AuthContext } from "../../context/AuthContext";
 import { JoinedEventCard } from "../../components/Joined-Event-Card/JoinedEventCard";
 import { useAxiousSecure } from "../../hooks/useAxiousSecure";
 import { Loader } from "../Loader/Loader";
+import { EmptyJoinedEvent } from "./EmptyJoinedEvent";
 
 export const JoinedEvent = ()=>{
     const {user} = use(AuthContext);
@@ -25,6 +26,9 @@ export const JoinedEvent = ()=>{
 
     if(loading){
         return <Loader/>
+    }
+    if(joinedEventsData.length === 0){
+        return <EmptyJoinedEvent/>
     }
 
     return(

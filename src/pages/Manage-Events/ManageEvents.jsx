@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { useAxiousSecure } from "../../hooks/useAxiousSecure";
 import { Loader } from "../Loader/Loader";
 import moment from "moment";
+import { EmptyManageEvent } from "./EmptyManageEvent";
 
 export const ManageEvents = ()=>{
     const {user , isDark} = use(AuthContext);
@@ -55,15 +56,14 @@ export const ManageEvents = ()=>{
     }
 
     
-
-
-    
-
-
     
 
     if(loading){
       return <Loader/>
+    }
+    
+    if(eventsData.length === 0){
+      return <EmptyManageEvent/>
     }
 
 
@@ -77,7 +77,7 @@ export const ManageEvents = ()=>{
               {/* head */}
               <thead>
                 <tr className={`border border-gray-200 text-center ${isDark ? "text-white" :"text-gray-700"}`}>
-                  <th className="border border-gray-200">Name</th>
+                  <th className="border border-gray-200">Author</th>
                   <th className="border border-gray-200">Event Title</th>
                   <th className="border border-gray-200">Event Type</th>
                   <th className="border border-gray-200">Date</th>
@@ -102,7 +102,7 @@ export const ManageEvents = ()=>{
                                   <div className="avatar">
                                     <div className="mask mask-squircle h-12 w-12">
                                       <img
-                                        src={signleData.photo}
+                                        src={signleData.ThumbPhoto}
                                         alt="Avatar Tailwind CSS Component" />
                                     </div>
                                   </div>

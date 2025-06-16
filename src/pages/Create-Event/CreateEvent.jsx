@@ -77,6 +77,19 @@ export const CreateEvent = ()=>{
                 <div className="flex md:flex-row flex-col gap-2 mb-4">
                   <div className="w-full">
                     <label className="block mb-2 font-medium">
+                      User Name:<span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="userName"
+                      value={user.displayName}
+                      readOnly
+                      className="w-full p-2 border rounded bg-transparent"
+                      required
+                    />
+                  </div>
+                  <div className="w-full">
+                    <label className="block mb-2 font-medium">
                       User Email:<span className="text-red-500">*</span>
                     </label>
                     <input
