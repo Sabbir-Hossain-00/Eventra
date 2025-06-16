@@ -70,7 +70,7 @@ export const Register = ()=>{
     
 
     return(
-        <section className=" min-h-screen  flex justify-center items-center py-10 container mx-auto px-3 md:px-6 lg:px-8 xl:px-14">
+        <section className=" min-h-screen  flex justify-center items-center py-10 container mx-auto px-3 md:px-6 lg:px-8 xl:px-20">
           <div className="card backdrop-blur-md bg-white/30 border border-white/20 rounded-xl mx-auto w-full max-w-sm shrink-0 shadow-2xl">
             <div className={` card-body  ${isDark? "text-white":"text-black"}`}>
                 <h1 className=" text-3xl font-medium text-center mt-4">Register Now</h1>

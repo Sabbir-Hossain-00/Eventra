@@ -68,7 +68,7 @@ export const ManageEvents = ()=>{
 
 
     return(
-        <section className="mt-10 min-h-screen py-20 container mx-auto px-3 md:px-6 lg:px-8 xl:px-14">
+        <section className="mt-10 min-h-screen py-20 container mx-auto px-3 md:px-6 lg:px-8 xl:px-20">
           <h1 className="text-center text-2xl md:text-4xl mb-2 font-medium">The Events You Created
           </h1>
           <p className="text-center mb-10 ">Manage all the events you've created in one place. Update details, remove events, <br /> or explore your communities—right from your dashboard.</p>
@@ -80,7 +80,7 @@ export const ManageEvents = ()=>{
                   <th className="border border-gray-200">Author</th>
                   <th className="border border-gray-200">Event Title</th>
                   <th className="border border-gray-200">Event Type</th>
-                  <th className="border border-gray-200">Date</th>
+                  <th className="border border-gray-200">Event Date</th>
                   <th className="border border-gray-200">Update</th>
                   <th className="border border-gray-200">Delete</th>
                 </tr>
@@ -97,8 +97,8 @@ export const ManageEvents = ()=>{
 
 
                     return <tr className="border border-gray-200 text-center" key={signleData._id}>
-                              <td className="border border-gray-200">
-                                <div className="flex items-center  gap-3">
+                              <td className="border border-gray-200 ">
+                                <div className="flex items-center   gap-3">
                                   <div className="avatar">
                                     <div className="mask mask-squircle h-12 w-12">
                                       <img
@@ -106,9 +106,9 @@ export const ManageEvents = ()=>{
                                         alt="Avatar Tailwind CSS Component" />
                                     </div>
                                   </div>
-                                  <div className="flex flex-col min-w-fit pr-2 items-start">
+                                  <div className="flex flex-col  pr-2 items-start">
                                     <div className="font-bold">{signleData.userName}</div>
-                                    <div className="text-sm opacity-50">{signleData.eventLocation}</div>
+                                    <div className="text-sm opacity-50 ">{signleData.eventLocation}</div>
                                   </div>
                                 </div>
                               </td>

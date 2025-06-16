@@ -29,7 +29,7 @@ export const Navbar = () => {
 
   return (
     <div className={`fixed top-0 left-0 w-full z-50  transition-all duration-300 shadow-sm py-3 ${isDark ? "bg-black text-white" : "bg-white"}`}>
-      <div className=" navbar container mx-auto px-3 md:px-6 lg:px-8 xl:px-14 text-black dark:text-white">
+      <div className=" navbar container mx-auto px-3 md:px-6 lg:px-8 xl:px-20 text-black dark:text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className={`btn btn-xs px-0 btn-ghost lg:hidden ${isDark? "text-white": "text-black"}`}>

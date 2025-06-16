@@ -8,7 +8,7 @@ export const Footer = ()=>{
     return(
         <section className={` ${isDark ? "bg-black":"bg-white"}`}>
             <footer className="pt-20 py-12 px-6 sm:px-10 lg:px-20 shadow-lg">
-              <div className="container mx-auto px-3 md:px-6 lg:px-8 xl:px-14 flex flex-col md:flex-row gap-12 md:gap-0  justify-between items-start">
+              <div className="container mx-auto px-3 md:px-6 lg:px-8 xl:px-20 flex flex-col md:flex-row gap-12 md:gap-0  justify-between items-start">
             
                 
                 <div className="space-y-4">

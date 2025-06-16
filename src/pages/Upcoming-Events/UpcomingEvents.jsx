@@ -37,7 +37,13 @@ export const UpcomingEvents = ()=>{
     },[category])
 
     return(
-        <section className="pt-30 pb-10 container mx-auto px-3 md:px-6 lg:px-8 xl:px-14">
+        <section className="pt-30 pb-10 container mx-auto px-3 md:px-6 lg:px-8 xl:px-20">
+
+             <div className="mb-12">
+                <h1 className="md:text-3xl text-2xl text-center font-medium mb-2">Discover and Join Upcoming Events</h1>
+                <p className="text-center">Explore community-driven events like cleanups, donations, and tree plantings happening near you. <br /> Get involved, make an impact, and help build a better tomorrow—one event at a time.</p>
+            </div>
+
             <div className="mb-10 flex justify-center items-center ">
 
                  <div className=" relative">
@@ -45,7 +51,7 @@ export const UpcomingEvents = ()=>{
                   value={category}
                   onChange={(e)=>setCategory(e.target.value)}
                   required
-                  className="appearance-none border-0 border-r border-gray-300 w-fit p-3 pr-6 rounded-none rounded-tl-md rounded-bl-md  bg-gray-200"
+                  className="appearance-none border-0  w-fit p-3 pr-6 rounded-none rounded-tl-lg rounded-bl-lg  bg-[#e4c1f9]"
                   >
                   <option value="">All</option>
                   <option value="Plantation">Plantation</option>
@@ -63,12 +69,13 @@ export const UpcomingEvents = ()=>{
                   onChange={(e)=> setSearchValue(e.target.value)} 
                   type="text" 
                   name="search" 
-                  placeholder="Search Event"
-                  className="bg-white px-3 md:pr-30 py-3"
+                  placeholder="Search an event"
+                  className="bg-white md:px-6 pl-3 md:pr-40 py-3"
                   />
-                  <button className="btn py-6 rounded-none rounded-tr-md rounded-br-md border-0 bg-[#e4c1f9]"><Search size={18} /></button>
+                  <button className="btn py-6 rounded-none rounded-tr-lg rounded-br-lg border-0 bg-[#e4c1f9]"><Search size={18} /></button>
                 </form>
             </div>
+
            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {
                 eventsData?.map((eventData)=>{
