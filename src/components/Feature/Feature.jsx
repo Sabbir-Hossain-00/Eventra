@@ -9,7 +9,7 @@ export const Feature = ()=>{
         <section className={`py-16 px-6 sm:px-10 lg:px-20 border-2  rounded-2xl ${isDark ? "bg-[#000000] border-[#006d77]": "bg-white border-fuchsia-100"}`}>
            <div className="max-w-7xl mx-auto text-center mb-20">
              <h2 className="text-2xl md:text-4xl font-semibold  mb-4">
-               Why Choose Eventra?
+               Why Choose <span className={`${isDark?"text-[#006d77]":"text-[#e4c1f9]"}`}>Eventra?</span>
              </h2>
              <p className=" text-lg   max-w-2xl mx-auto">
                Your all-in-one platform to create, join, and track social service events — designed to empower local communities and drive real impact.
@@ -18,8 +18,8 @@ export const Feature = ()=>{
          
            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
             
-             <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
-               <div className={` p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%] ${isDark ? "bg-[#006d77]": "bg-[#fcedfc]"}`}>
+             <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] hover:border hover:border-[#006d77]": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
+               <div className={` p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%] ${isDark ? "bg-[#006d77] ": "bg-[#fcedfc]"}`}>
                  <Calendar size={40} />
                </div>
                <h3 className="mt-16 text-2xl font-semibold mb-2 ">
@@ -30,7 +30,7 @@ export const Feature = ()=>{
                </p>
              </div>
          
-             <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
+             <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] hover:border hover:border-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
                <div className={` p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%] ${isDark ? "bg-[#006d77]": "bg-[#fcedfc]"}`}>
                  <Handshake size={40} />
                </div>
@@ -42,7 +42,7 @@ export const Feature = ()=>{
                </p>
              </div>
          
-             <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
+             <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] hover:border hover:border-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
                <div className={` p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%] ${isDark ? "bg-[#006d77]": "bg-[#fcedfc]"}`}>
                  <ChartNoAxesCombined size={40} />
                </div>
@@ -54,7 +54,7 @@ export const Feature = ()=>{
                </p>
              </div>
          
-             <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
+             <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] hover:border hover:border-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
                <div className={` p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%] ${isDark ? "bg-[#006d77]": "bg-[#fcedfc]"}`}>
                  <Bell size={40} />
                </div>
@@ -66,7 +66,7 @@ export const Feature = ()=>{
                </p>
              </div>
          
-             <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
+             <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] hover:border hover:border-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
                <div className={` p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%] ${isDark ? "bg-[#006d77]": "bg-[#fcedfc]"}`}>
                  <Earth size={40} />
                </div>
@@ -78,7 +78,7 @@ export const Feature = ()=>{
                </p>
              </div>
          
-             <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
+             <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] hover:border hover:border-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
                <div className={` p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%] ${isDark ? "bg-[#006d77]": "bg-[#fcedfc]"}`}>
                  <Lock size={40} />
                </div>

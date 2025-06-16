@@ -71,7 +71,7 @@ export const ManageEvents = ()=>{
 
     return(
         <section className="mt-10 min-h-screen py-20 container mx-auto px-3 md:px-6 lg:px-8 xl:px-20">
-          <h1 className="text-center text-2xl md:text-4xl mb-2 font-medium">The Events You Created
+          <h1 className="text-center text-2xl md:text-4xl mb-2 font-medium">The Events You <span className={`${isDark?"text-[#006d77]":"text-[#e4c1f9]"}`}>Created</span>
           </h1>
           <p className="text-center mb-10 ">Manage all the events you've created in one place. Update details, remove events, <br /> or explore your communities—right from your dashboard.</p>
           <div className=" overflow-x-auto">

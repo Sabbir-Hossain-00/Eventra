@@ -35,7 +35,7 @@ export const JoinedEvent = ()=>{
         <section className="py-20 pt-30 container mx-auto px-3 md:px-6 lg:px-8 xl:px-20">
 
           <div className="mb-12">
-                <h1 className="md:text-3xl text-2xl text-center font-medium mb-2">Your Joined Events Overview</h1>
+                <h1 className="md:text-3xl text-2xl text-center font-medium mb-2">Your Joined Events <span className={`${isDark?"text-[#006d77]":"text-[#e4c1f9]"}`}>Overview</span></h1>
                 <p className="text-center">Track all the events you’ve joined in one place. Stay updated, manage your participation, <br /> and relive your contributions to making a positive impact in your community.</p>
           </div>
 

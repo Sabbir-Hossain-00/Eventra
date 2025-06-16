@@ -42,7 +42,7 @@ export const UpcomingEvents = ()=>{
         <section className="pt-30 pb-10 container mx-auto px-3 md:px-6 lg:px-8 xl:px-20">
 
              <div className="mb-12">
-                <h1 className="md:text-3xl text-2xl text-center font-medium mb-2">Discover and Join Upcoming Events</h1>
+                <h1 className="md:text-3xl text-2xl text-center font-medium mb-2">Discover and Join Upcoming <span className={`${isDark?"text-[#006d77]":"text-[#e4c1f9]"}`}>Events</span></h1>
                 <p className="text-center">Explore community-driven events like cleanups, donations, and tree plantings happening near you. <br /> Get involved, make an impact, and help build a better tomorrow—one event at a time.</p>
             </div>
 
@@ -74,7 +74,7 @@ export const UpcomingEvents = ()=>{
                   placeholder="Search an event"
                   className={`bg-white md:px-6 pl-3 md:pr-40 py-3 text-black`}
                   />
-                  <button className={`btn py-[23px] rounded-none rounded-tr-lg shadow-none rounded-br-lg border-0 ${isDark? "bg-[#006d77] text-white" :"bg-[#e4c1f9]"}`}><Search size={18} /></button>
+                  <button className={`btn md:py-6 py-[23px] rounded-none rounded-tr-lg shadow-none rounded-br-lg border-0 ${isDark? "bg-[#006d77] text-white" :"bg-[#e4c1f9]"}`}><Search size={18} /></button>
                 </form>
             </div>
 

@@ -1,12 +1,36 @@
-# React + Vite
+# 🌟 Eventra
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live URL:** [https://eventra-00.web.app/](https://eventra-00.web.app/)
 
-Currently, two official plugins are available:
+## 📌 Project Purpose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Eventra** is a social development event platform that allows users to **create**, **join**, and **update events** in their community. Designed with a clean and intuitive UI/UX, Eventra helps users stay engaged with upcoming events and encourages active community participation.
 
-## Expanding the ESLint configuration
+## 🚀 Key Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✅ Create, update, and join events easily
+- 🌙 Toggle between Dark and Light theme modes
+- 📅 View all upcoming events with intuitive date-based filtering
+- 🎨 Beautiful animations and transitions for smooth user experience
+- 📱 Fully responsive and modern UI/UX using DaisyUI and Tailwind CSS
+- 🔒 Secure user authentication with Firebase
+- 🔔 Alerts and notifications with SweetAlert
+- 📆 Integrated date picker for event scheduling
+- 🌍 Live app hosted on Firebase
+
+## 🛠️ Tech Stack & NPM Packages Used
+
+- **React.js**
+- **React Router** – for routing
+- **DaisyUI** – for styled components
+- **Tailwind CSS** – utility-first styling
+- **Lucide React** – modern icon library
+- **React Date Picker** – to select event dates
+- **React Awesome Reveal** – for scroll animations
+- **React Simple Typewriter** – animated typing effect
+- **SweetAlert2** – for beautiful alerts and dialogs
+- **Axios** – for API requests
+- **Firebase** – for authentication and hosting
+- **Moment.js** – for date formatting and manipulation
+
+

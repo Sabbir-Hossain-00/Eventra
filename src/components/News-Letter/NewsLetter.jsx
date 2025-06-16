@@ -8,7 +8,7 @@ export const NewsLetter = ()=>{
           <div className={`w-full border-2 py-16 px-6 sm:px-10 lg:px-20 overflow-hidden rounded-3xl ${isDark ?"bg-[#000000] border-[#006d77]" : "bg-white border-fuchsia-100"}`}>
              <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-2xl sm:text-4xl font-semibold mb-4 tracking-tight">
-               Stay in the Loop. Lead the Change.
+               Stay in the Loop. Lead the <span className={`${isDark?"text-[#006d77]":"text-[#e4c1f9]"}`}>Change</span>
             </h2>
             <p className="text-base sm:text-lg  mb-8">
               Subscribe to Eventra updates and never miss a chance to join powerful community-driven events. Be the first to hear about local missions, inspiring stories, and real opportunities to lead change.
