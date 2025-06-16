@@ -39,7 +39,7 @@ export const CreateEvent = ()=>{
           <div
               className={`mt-20 py-10 min-h-screen flex items-center justify-center p-4 transition-all duration-500 ${
                 isDark
-                  ? "bg-gradient-to-br from-gray-900 via-purple-900 to-black text-gray-300"
+                  ? "bg-gradient-to-br from-[#006d77] via-[#335c67] to-[#3c6e71] text-gray-300"
                   : "bg-gradient-to-br from-purple-300 via-blue-200 to-blue-300 text-gray-800"
               }`}
             >
@@ -156,7 +156,7 @@ export const CreateEvent = ()=>{
         
                 <button
                   type="submit"
-                  className="btn w-full border-none bg-purple-500 text-white font-bold py-2 rounded hover:bg-purple-600 transition"
+                  className={`btn w-full shadow-none border-none ${isDark? "bg-[#006d77] text-white": "bg-[#e4c1f9] text-black"}`}
                 >
                   Create
                 </button>

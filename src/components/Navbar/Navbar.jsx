@@ -86,11 +86,11 @@ export const Navbar = () => {
                   <li><NavLink className={({ isActive }) => isActive ? `${isDark? "text-[#006d77] font-medium": "text-[#e4c1f9] font-medium"}` : "font-medium"} to="/create-event">Create Event</NavLink></li>
                   <li><NavLink className={({ isActive }) => isActive ? `${isDark? "text-[#006d77] font-medium": "text-[#e4c1f9] font-medium"}` : "font-medium"} to="/manage-events">Manage Events</NavLink></li>
                   <li><NavLink className={({ isActive }) => isActive ? `${isDark? "text-[#006d77] font-medium": "text-[#e4c1f9] font-medium"}` : "font-medium"} to="/joined-events">Joined Events</NavLink></li>
-                  <li><button className="btn  btn-xs w-fit ml-2 mt-1 border-none  bg-[#e4c1f9] hover:bg-[#e4c1f9] " onClick={handleLogout}>Logout</button></li>
+                  <li><button className={`btn btn-sm w-fit px-8 ml-2 mt-1 shadow-none border-none ${isDark? "bg-[#006d77] text-white": "bg-[#e4c1f9] text-black"}`} onClick={handleLogout}>Logout</button></li>
                 </ul>
               </div>
             ) : (
-              <Link to="/login" className="btn btn-sm md:btn-md border-none bg-[#e4c1f9] hover:bg-[#e4c1f9]">Login</Link>
+              <Link to="/login" className={`btn shadow-none border-none ${isDark? "bg-[#006d77] text-white": "bg-[#e4c1f9] text-black"}`}>Login</Link>
             )}
 
         </div>
