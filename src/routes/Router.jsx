@@ -10,11 +10,13 @@ import { EventDetails } from "../pages/Event-Details/EventDetails";
 import { ManageEvents } from "../pages/Manage-Events/ManageEvents";
 import { UpdateGroup } from "../pages/Update-Group/UpdateGroup";
 import { JoinedEvent } from "../pages/Joined-Event/JoinedEvent";
+import { Error } from "../pages/Error/Error";
 
 export const router = createBrowserRouter([
     {
         path:"/",
         element: <MainLayout/>,
+        errorElement:<Error/>,
         children:[
             {
                 path: "/",

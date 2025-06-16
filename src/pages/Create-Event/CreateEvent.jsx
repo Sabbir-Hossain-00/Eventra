@@ -133,14 +133,6 @@ export const CreateEvent = ()=>{
                 />
                 </div>
 
-
-                {/* <input
-                  type="date"
-                  name="eventDate"
-                  min={new Date().toISOString().split("T")[0]}
-                  className="w-full p-2 mb-4 border  rounded bg-transparent"
-                  required
-                /> */}
         
                 <label className="block mb-2 font-medium">
                  Thumbnail Image URL:<span className="text-red-500">*</span>

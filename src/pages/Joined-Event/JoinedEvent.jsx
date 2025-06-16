@@ -1,6 +1,5 @@
 import { use, useEffect, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { JoinedEventCard } from "../../components/Joined-Event-Card/JoinedEventCard";
 import { useAxiousSecure } from "../../hooks/useAxiousSecure";
 import { Loader } from "../Loader/Loader";
 import { EmptyJoinedEvent } from "./EmptyJoinedEvent";

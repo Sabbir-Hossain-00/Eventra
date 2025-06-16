@@ -15,10 +15,12 @@ export const ManageEvents = ()=>{
 
     
     const fetchData = async()=>{
-        axiousSecure.get(`https://eventra-server.vercel.app/manageEvents?email=${user.email}`).then((res)=>{
+        if(user?.accessToken){
+          axiousSecure.get(`https://eventra-server.vercel.app/manageEvents?email=${user.email}`).then((res)=>{
           setEventsData(res.data)
           setLoading(false)
         }).catch(error => console.log(error))
+        }
     }
 
     useEffect(()=>{
