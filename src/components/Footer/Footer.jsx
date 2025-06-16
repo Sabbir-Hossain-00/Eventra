@@ -11,7 +11,10 @@ export const Footer = ()=>{
               <div className="container mx-auto px-3 md:px-6 lg:px-8 xl:px-20 flex flex-col md:flex-row gap-12 md:gap-0  justify-between items-start">
             
                 <div className="space-y-4">
-                  <h3 className={`text-3xl font-medium tracking-wide ${isDark ? "text-[#006d77]" :"text-[#e4c1f9]"}`}>Eventra</h3>
+                  <div className="flex items-center">
+                    <img className="w-12 mt-1" src={isDark? "https://i.ibb.co/bMvnf5GX/Chat-GPT-Image-Jun-16-2025-11-27-58-PM.png": "https://i.ibb.co/xKhwZF7w/Chat-GPT-Image-Jun-16-2025-11-29-55-PM.png"} alt="" />
+                      <h3 className={`text-3xl font-medium tracking-wide ${isDark ? "text-[#006d77]" :"text-[#e4c1f9]"}`}>Eventra</h3>
+                  </div>
                   <p className={`max-w-xs ${isDark? "text-white" : "text-black"} `}>
                     Bringing communities together through powerful events and shared purpose. Join us and be the change you want to see.
                   </p>
