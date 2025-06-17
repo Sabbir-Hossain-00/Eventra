@@ -20,9 +20,9 @@ export const Feature = ()=>{
             
              <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] hover:border hover:border-[#006d77]": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
                <div className={` p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%] ${isDark ? "bg-[#006d77] ": "bg-[#fcedfc]"}`}>
-                 <Calendar size={40} />
+                 <Calendar size={32} />
                </div>
-               <h3 className="mt-16 text-2xl font-semibold mb-2 ">
+               <h3 className="md:mt-16 mt-8 text-2xl font-semibold mb-2 ">
                  Easy Event Creation
                </h3>
                <p className="">
@@ -32,9 +32,9 @@ export const Feature = ()=>{
          
              <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] hover:border hover:border-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
                <div className={` p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%] ${isDark ? "bg-[#006d77]": "bg-[#fcedfc]"}`}>
-                 <Handshake size={40} />
+                 <Handshake size={32} />
                </div>
-               <h3 className="mt-16 text-2xl font-semibold mb-2">
+               <h3 className="md:mt-16 mt-8 text-2xl font-semibold mb-2">
                  Community Collaboration
                </h3>
                <p className="">
@@ -44,9 +44,9 @@ export const Feature = ()=>{
          
              <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] hover:border hover:border-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
                <div className={` p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%] ${isDark ? "bg-[#006d77]": "bg-[#fcedfc]"}`}>
-                 <ChartNoAxesCombined size={40} />
+                 <ChartNoAxesCombined size={32} />
                </div>
-               <h3 className="mt-16 text-2xl font-semibold mb-2">
+               <h3 className="md:mt-16 mt-8 text-2xl font-semibold mb-2">
                  Impact Tracking
                </h3>
                <p className="">
@@ -56,9 +56,9 @@ export const Feature = ()=>{
          
              <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] hover:border hover:border-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
                <div className={` p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%] ${isDark ? "bg-[#006d77]": "bg-[#fcedfc]"}`}>
-                 <Bell size={40} />
+                 <Bell size={32} />
                </div>
-               <h3 className="mt-16 text-2xl font-semibold mb-2">
+               <h3 className="md:mt-16 mt-8 text-2xl font-semibold mb-2">
                  Real-Time Notifications
                </h3>
                <p className="">
@@ -68,9 +68,9 @@ export const Feature = ()=>{
          
              <div className={`relative mt-4 flex flex-col  xl:p-10 p-6  rounded-xl  hover:shadow-2xl  hover:scale-105 transition-transform duration-300 ${isDark ? "bg-gradient-to-b from-[#000000] to-[#006d77] hover:border hover:border-[#006d77] ": "bg-gradient-to-b from-white to-[#f1dbf7]"}`}>
                <div className={` p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%] ${isDark ? "bg-[#006d77]": "bg-[#fcedfc]"}`}>
-                 <Earth size={40} />
+                 <Earth size={32} />
                </div>
-               <h3 className="mt-16 text-2xl font-semibold mb-2">
+               <h3 className="md:mt-16 mt-8 text-2xl font-semibold mb-2">
                  Local & Global Reach
                </h3>
                <p className="">
@@ -82,7 +82,7 @@ export const Feature = ()=>{
                <div className={` p-6 rounded-full absolute -top-12 xl:left-[10%] lg:left-[20%] ${isDark ? "bg-[#006d77]": "bg-[#fcedfc]"}`}>
                  <Lock size={40} />
                </div>
-               <h3 className="mt-16 text-2xl font-semibold mb-2">
+               <h3 className="md:mt-16 mt-8 text-2xl font-semibold mb-2">
                  Secure & Private
                </h3>
                <p className="">

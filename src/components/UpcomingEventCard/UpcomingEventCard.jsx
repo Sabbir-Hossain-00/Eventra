@@ -24,11 +24,11 @@ export const UpcomingEventCard = ({ eventData }) => {
     .format("DD/MM/YYYY");
 
   return (
-    <section className={`animate-rotate-border rounded-2xl bg-conic/[from_var(--border-angle)] from-60% via-90% to-100% p-1 ${isDark ? "from-black via-[#00c1d3] to-black":"from-white via-[#ce7efc] to-white"}`}> 
+    <section className={`animate-rotate-border hover:shadow-2xl  hover:scale-105 transition-transform duration-300 rounded-2xl bg-conic/[from_var(--border-angle)] from-60% via-70% to-100% p-1 ${isDark ? "from-white via-[#00818d] to-white":"from-white via-[#ce7efc] to-white"}`}> 
 
-      <div className={`rounded-2xl h-full ${isDark ? "bg-[#000000]":"bg-white"}`}>
-          <figure>
-            <img src={ThumbPhoto} alt="bg-img" className="rounded-t-2xl w-full h-48 object-cover" />
+      <div className={`rounded-2xl h-full  ${isDark ? "bg-cyan-50 text-black":"bg-fuchsia-50"}`}>
+          <figure className="p-5">
+            <img src={ThumbPhoto} alt="bg-img" className="rounded-2xl w-full h-48 object-cover" />
           </figure>
           <div className="card-body">
             <h2 className="card-title">{eventTitle}</h2>
