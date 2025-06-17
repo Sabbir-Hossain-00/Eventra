@@ -25,7 +25,7 @@ export const Banner = ()=>{
 
                 <p className="xl:text-lg text-base">Welcome to Eventra — your community-driven platform for social development events. Whether it’s cleanups, donations, or tree plantations, take part in local initiatives or create your own. Let's build a better tomorrow, together.</p>
 
-                <div className="flex gap-4 text-sm xl:text-base font-medium mt-2">
+                <div className="flex flex-col md:flex-row gap-4 text-sm xl:text-base font-medium mt-2">
                   <div>
                     <p className={`${isDark ? "text-white" : "text-black"}`}>🌱 <CountUp delay={0} end={1200} duration={5} enableScrollSpy={true} scrollSpyDelay={0} suffix="+" /> Trees Planted</p>
                   </div>
