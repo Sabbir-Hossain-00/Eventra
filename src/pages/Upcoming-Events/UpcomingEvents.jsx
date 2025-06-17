@@ -53,7 +53,7 @@ export const UpcomingEvents = ()=>{
 
             <div className="mb-10 flex justify-center items-center ">
 
-                 <div className=" relative">
+                 <div className=" relative text-xs md:text-base">
                   <select
                   value={category}
                   onChange={(e)=>setCategory(e.target.value)}
@@ -77,9 +77,9 @@ export const UpcomingEvents = ()=>{
                   type="text" 
                   name="search" 
                   placeholder="Search an event"
-                  className={`bg-white md:px-6 pl-3 md:pr-40 py-3 text-black`}
+                  className={`bg-white md:px-6 pl-3 md:pr-40 py-3 text-black text-xs md:text-base`}
                   />
-                  <button className={`btn md:py-6 py-[23px] rounded-none rounded-tr-lg shadow-none rounded-br-lg border-0 ${isDark? "bg-[#006d77] text-white" :"bg-[#e4c1f9]"}`}><Search size={18} /></button>
+                  <button className={`btn  md:py-6   rounded-none rounded-tr-lg shadow-none rounded-br-lg border-0 ${isDark? "bg-[#006d77] text-white" :"bg-[#e4c1f9]"}`}><Search size={16} /></button>
                 </form>
             </div>
 

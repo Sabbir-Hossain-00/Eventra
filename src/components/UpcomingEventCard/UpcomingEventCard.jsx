@@ -24,7 +24,7 @@ export const UpcomingEventCard = ({ eventData }) => {
     .format("DD/MM/YYYY");
 
   return (
-    <section className={`animate-rotate-border rounded-2xl bg-conic/[from_var(--border-angle)] from-60% via-90% to-100% p-1 ${isDark ? "from-black via-[#006d77] to-black":"from-white via-[#e4c1f9] to-white"}`}> 
+    <section className={`animate-rotate-border rounded-2xl bg-conic/[from_var(--border-angle)] from-60% via-90% to-100% p-1 ${isDark ? "from-black via-[#00c1d3] to-black":"from-white via-[#ce7efc] to-white"}`}> 
 
       <div className={`rounded-2xl h-full ${isDark ? "bg-[#000000]":"bg-white"}`}>
           <figure>
