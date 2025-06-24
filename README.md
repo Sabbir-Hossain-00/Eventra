@@ -1,36 +1,57 @@
-# 🌟 Eventra
+# Project Name: Eventra
 
-**Live URL:** [https://eventra-00.web.app/](https://eventra-00.web.app/)
+## Overview
+Eventra is a social development event platform that enables users to create, join, and update events within their community. It features a clean, modern UI/UX to keep users engaged with upcoming events and foster active participation.
 
-## 📌 Project Purpose
+## Home Page
+<p align="center">
+  <img src="https://i.ibb.co/G4w3zTd5/image.png" alt="Eventra Screenshot" width="80%" />
+</p>
 
-**Eventra** is a social development event platform that allows users to **create**, **join**, and **update events** in their community. Designed with a clean and intuitive UI/UX, Eventra helps users stay engaged with upcoming events and encourages active community participation.
+## Main Technologies
+- React.js  
+- Tailwind CSS  
+- DaisyUI  
+- Firebase  
+- Express.js (if backend used)  
+- MongoDB (if database used)
 
-## 🚀 Key Features
+## Key Features
+- Create, update, and join events easily  
+- Dark and light theme modes  
+- Date-based event filtering  
+- Responsive and modern design  
+- Secure authentication with Firebase  
+- Alerts and notifications using SweetAlert  
+- Integrated date picker  
 
-- ✅ Create, update, and join events easily
-- 🌙 Toggle between Dark and Light theme modes
-- 📅 View all upcoming events with intuitive date-based filtering
-- 🎨 Beautiful animations and transitions for smooth user experience
-- 📱 Fully responsive and modern UI/UX using DaisyUI and Tailwind CSS
-- 🔒 Secure user authentication with Firebase
-- 🔔 Alerts and notifications with SweetAlert
-- 📆 Integrated date picker for event scheduling
-- 🌍 Live app hosted on Firebase
+## Dependencies
+- react  
+- react-router-dom  
+- tailwindcss  
+- daisyui  
+- firebase  
+- axios  
+- sweetalert2  
+- moment  
+- react-datepicker  
+- react-awesome-reveal  
 
-## 🛠️ Tech Stack & NPM Packages Used
+## How to Run Locally
+1. Clone the repository:  
+   `git clone https://github.com/yourusername/eventra.git`
 
-- **React.js**
-- **React Router** – for routing
-- **DaisyUI** – for styled components
-- **Tailwind CSS** – utility-first styling
-- **Lucide React** – modern icon library
-- **React Date Picker** – to select event dates
-- **React Awesome Reveal** – for scroll animations
-- **React Simple Typewriter** – animated typing effect
-- **SweetAlert2** – for beautiful alerts and dialogs
-- **Axios** – for API requests
-- **Firebase** – for authentication and hosting
-- **Moment.js** – for date formatting and manipulation
+2. Navigate into the project folder:  
+   `cd eventra`
 
+3. Install dependencies:  
+   `npm install`
+
+4. Start the development server:  
+   `npm start`
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Live Demo
+[https://eventra-00.web.app/](https://eventra-00.web.app/)
 
