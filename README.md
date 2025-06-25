@@ -55,3 +55,5 @@ Eventra is a social development event platform that enables users to create, joi
 ## Live Demo
 [https://eventra-00.web.app/](https://eventra-00.web.app/)
 
+## Eventra-Server Repo [(Evenra-Server)](https://github.com/Sabbir-Hossain-00/Eventra-Server)
+
