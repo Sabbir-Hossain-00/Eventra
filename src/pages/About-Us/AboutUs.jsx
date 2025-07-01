@@ -5,12 +5,38 @@ import { Link } from "react-router";
 export const AboutUs = () => {
   const { isDark } = use(AuthContext);
 
+  const teamMeet = [
+    {
+      name: "Sabbir Hossain",
+      role: "Founder & Lead Organizer",
+      image: "https://i.ibb.co/jvLdLRC7/sabbir-logo.webp",
+    },
+    {
+      name: "Sakil Atik",
+      role: "Volunteer Coordinator",
+      image:
+        "https://i.ibb.co/5W9MTw1L/sakil.jpg",
+    },
+    {
+      name: "Juweel Mafi",
+      role: "Community Manager",
+      image:
+        "https://i.ibb.co/8gQDLDCr/juwel.jpg",
+    },
+    {
+      name: "Hossain Mashood",
+      role: "Tech & Operations",
+      image:
+        "https://i.ibb.co/23ptBx1t/mashood.jpg",
+    },
+  ];
+
   useEffect(() => {
-              document.title = "About - Eventra";
-              return () => {
-                document.title = "Eventra"; // reset on unmount
-              };
-            }, []);
+    document.title = "About - Eventra";
+    return () => {
+      document.title = "Eventra"; // reset on unmount
+    };
+  }, []);
 
   return (
     <section className="mt-23 py-10 pb-20 container mx-auto px-3 md:px-6 lg:px-8 xl:px-20 min-h-screen space-y-20">
@@ -81,16 +107,18 @@ export const AboutUs = () => {
           Meet the Team
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {["Sabbir", "Ayaan", "Nusaiba", "Tasin"].map((name, i) => (
+          {teamMeet?.map((team, i) => (
             <div
               key={i}
               className={`p-6 rounded-xl shadow-lg flex flex-col items-center text-center transition hover:shadow-xl ${
                 isDark ? "bg-gray-900 text-white" : "bg-white text-black"
               }`}
             >
-              <div className="w-20 h-20 bg-gray-300 rounded-full mb-4"></div>
-              <h3 className="font-bold">{name}</h3>
-              <p className="text-sm text-gray-500">Event Manager</p>
+              <div className="w-20 h-20 bg-gray-300 rounded-full mb-4">
+                <img className="w-20 h-20 rounded-full" src={team.image} alt="" />
+              </div>
+              <h3 className="font-bold">{team.name}</h3>
+              <p className="text-sm text-gray-500">{team.role}</p>
             </div>
           ))}
         </div>
@@ -104,13 +132,13 @@ export const AboutUs = () => {
           help you get started.
         </p>
         <Link
-              to="/all-events"
-              className={`btn shadow-none  border-none ${
-                isDark ? "bg-[#006d77] text-white" : "bg-[#e4c1f9] text-black"
-              }`}
-            >
-              View Event
-            </Link>
+          to="/all-events"
+          className={`btn shadow-none  border-none ${
+            isDark ? "bg-[#006d77] text-white" : "bg-[#e4c1f9] text-black"
+          }`}
+        >
+          View Event
+        </Link>
       </div>
     </section>
   );
