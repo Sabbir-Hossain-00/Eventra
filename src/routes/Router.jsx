@@ -11,6 +11,8 @@ import { ManageEvents } from "../pages/Manage-Events/ManageEvents";
 import { JoinedEvent } from "../pages/Joined-Event/JoinedEvent";
 import { Error } from "../pages/Error/Error";
 import { UpdateEvent } from "../pages/Update-Event/UpdateEvent";
+import { AllEvent } from "../pages/AllEvents/AllEvent";
+import { AboutUs } from "../pages/About-Us/AboutUs";
 
 export const router = createBrowserRouter([
     {
@@ -20,7 +22,8 @@ export const router = createBrowserRouter([
         children:[
             {
                 path: "/",
-                element:<Home/>
+                element:<Home/>,
+                loader:()=>fetch("https://eventra-server.vercel.app/upcomingEvents"),
             },
             {
                 path:"/login",
@@ -31,6 +34,10 @@ export const router = createBrowserRouter([
                 element:<Register/>
             },
             {
+                path:"/about-us",
+                element:<AboutUs/>
+            },
+            {
                 path:"/create-event",
                 element: <PrivateRoute><CreateEvent/></PrivateRoute>
             },
@@ -38,6 +45,11 @@ export const router = createBrowserRouter([
                 path:"/upcoming-events",
                 loader:()=>fetch("https://eventra-server.vercel.app/upcomingEvents"),
                 element:<UpcomingEvents/>
+            },
+            {
+                path:"/all-events",
+                loader:()=>fetch("https://eventra-server.vercel.app/allEvents"),
+                element:<AllEvent/>
             },
             {
                 path:"/event-details/:id",
