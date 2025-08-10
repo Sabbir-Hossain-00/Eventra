@@ -30,6 +30,7 @@ export const AboutUs = () => {
         "https://i.ibb.co/23ptBx1t/mashood.jpg",
     },
   ];
+
   
 
   useEffect(() => {
