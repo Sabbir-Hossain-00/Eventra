@@ -89,6 +89,7 @@ export const Navbar = () => {
             </NavLink>
           </li>
         </>
+        
       )}
       <li className={`${isDark ? "text-white" : ""}`}>
         <NavLink
