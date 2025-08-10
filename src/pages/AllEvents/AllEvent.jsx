@@ -3,6 +3,7 @@ import { use, useEffect, useState } from "react";
 import { EventCard } from "./EventCard";
 import { AuthContext } from "../../context/AuthContext";
 
+
 export const AllEvent = () => {
   const events = useLoaderData();
   const {isDark} = use(AuthContext);
