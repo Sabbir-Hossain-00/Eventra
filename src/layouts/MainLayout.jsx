@@ -5,6 +5,7 @@ import { Loader } from "../pages/Loader/Loader";
 import { use } from "react";
 import { AuthContext } from "../context/AuthContext";
 
+
 export const MainLayout = ()=>{
    const {isDark} = use(AuthContext)
    const navigation = useNavigation();
